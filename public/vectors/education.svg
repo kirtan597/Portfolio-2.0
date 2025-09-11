@@ -1,0 +1,39 @@
+<svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Education illustration -->
+  <g id="education">
+    <!-- Graduation cap -->
+    <ellipse cx="150" cy="100" rx="60" ry="15" fill="#1F2937"/>
+    <rect x="140" y="85" width="20" height="20" fill="#1F2937"/>
+    <circle cx="150" cy="95" r="3" fill="#EF4444"/>
+    <line x1="153" y1="95" x2="170" y2="80" stroke="#EF4444" stroke-width="2"/>
+    
+    <!-- Books stack -->
+    <rect x="100" y="180" width="100" height="15" fill="#EF4444" rx="2"/>
+    <rect x="105" y="165" width="90" height="15" fill="#10B981" rx="2"/>
+    <rect x="110" y="150" width="80" height="15" fill="#3B82F6" rx="2"/>
+    <rect x="115" y="135" width="70" height="15" fill="#F59E0B" rx="2"/>
+    
+    <!-- Certificate -->
+    <rect x="200" y="120" width="80" height="60" fill="#FFF" stroke="#D1D5DB" stroke-width="2" rx="3"/>
+    <rect x="210" y="130" width="60" height="3" fill="#6B7280" rx="1"/>
+    <rect x="210" y="140" width="50" height="3" fill="#6B7280" rx="1"/>
+    <rect x="210" y="150" width="55" height="3" fill="#6B7280" rx="1"/>
+    
+    <!-- Seal on certificate -->
+    <circle cx="250" cy="165" r="8" fill="#EF4444"/>
+    <text x="250" y="169" font-family="Arial" font-size="8" text-anchor="middle" fill="white">✓</text>
+    
+    <!-- Lightbulb (knowledge) -->
+    <circle cx="80" cy="140" r="20" fill="#FEF3C7"/>
+    <rect x="75" y="155" width="10" height="15" fill="#D1D5DB" rx="2"/>
+    <rect x="73" y="170" width="14" height="5" fill="#6B7280" rx="2"/>
+    
+    <!-- Light rays -->
+    <line x1="60" y1="120" x2="70" y2="130" stroke="#F59E0B" stroke-width="2"/>
+    <line x1="50" y1="140" x2="60" y2="140" stroke="#F59E0B" stroke-width="2"/>
+    <line x1="60" y1="160" x2="70" y2="150" stroke="#F59E0B" stroke-width="2"/>
+    <line x1="100" y1="120" x2="90" y2="130" stroke="#F59E0B" stroke-width="2"/>
+    <line x1="110" y1="140" x2="100" y2="140" stroke="#F59E0B" stroke-width="2"/>
+    <line x1="100" y1="160" x2="90" y2="150" stroke="#F59E0B" stroke-width="2"/>
+  </g>
+</svg>

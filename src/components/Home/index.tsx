@@ -223,7 +223,7 @@ export function HomeHero() {
                           <Image
                             width={50}
                             height={50}
-                            src="/Logo1.png"
+                            src="/logo.svg"
                             alt="logo"
                             loading="lazy"
                           />

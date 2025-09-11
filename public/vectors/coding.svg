@@ -1,0 +1,59 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Coding illustration -->
+  <g id="coding-scene">
+    <!-- Monitor -->
+    <rect x="100" y="80" width="200" height="120" fill="#1F2937" rx="8"/>
+    <rect x="110" y="90" width="180" height="100" fill="#0F172A" rx="4"/>
+    
+    <!-- Code on screen -->
+    <text x="120" y="110" font-family="monospace" font-size="10" fill="#10B981">function</text>
+    <text x="170" y="110" font-family="monospace" font-size="10" fill="#F59E0B">portfolio</text>
+    <text x="220" y="110" font-family="monospace" font-size="10" fill="#EF4444">()</text>
+    <text x="240" y="110" font-family="monospace" font-size="10" fill="#6B7280">{</text>
+    
+    <text x="130" y="125" font-family="monospace" font-size="10" fill="#3B82F6">return</text>
+    <text x="170" y="125" font-family="monospace" font-size="10" fill="#8B5CF6">&lt;Portfolio</text>
+    <text x="240" y="125" font-family="monospace" font-size="10" fill="#EC4899">/&gt;</text>
+    
+    <text x="120" y="140" font-family="monospace" font-size="10" fill="#6B7280">}</text>
+    
+    <!-- Cursor blinking -->
+    <rect x="130" y="135" width="2" height="12" fill="#10B981">
+      <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+    </rect>
+    
+    <!-- Monitor stand -->
+    <rect x="180" y="200" width="40" height="20" fill="#6B7280" rx="4"/>
+    <rect x="150" y="220" width="100" height="10" fill="#374151" rx="5"/>
+    
+    <!-- Keyboard -->
+    <rect x="120" y="240" width="160" height="40" fill="#4B5563" rx="6"/>
+    <rect x="130" y="250" width="10" height="8" fill="#6B7280" rx="2"/>
+    <rect x="145" y="250" width="10" height="8" fill="#6B7280" rx="2"/>
+    <rect x="160" y="250" width="10" height="8" fill="#6B7280" rx="2"/>
+    <rect x="175" y="250" width="10" height="8" fill="#6B7280" rx="2"/>
+    <rect x="190" y="250" width="10" height="8" fill="#6B7280" rx="2"/>
+    
+    <!-- Mouse -->
+    <ellipse cx="320" cy="260" rx="15" ry="20" fill="#4B5563"/>
+    <line x1="320" y1="245" x2="320" y2="275" stroke="#6B7280" stroke-width="1"/>
+    
+    <!-- Coffee cup -->
+    <rect x="50" y="180" width="30" height="35" fill="#8B4513" rx="4"/>
+    <rect x="55" y="185" width="20" height="25" fill="#D2691E" rx="2"/>
+    <ellipse cx="65" cy="187" rx="8" ry="3" fill="#F4A460"/>
+    <path d="M80 195 Q90 195 90 205 Q90 215 80 215" stroke="#8B4513" stroke-width="3" fill="none"/>
+    
+    <!-- Steam from coffee -->
+    <path d="M60 175 Q62 165 60 155" stroke="#E5E7EB" stroke-width="2" fill="none" opacity="0.7"/>
+    <path d="M70 175 Q68 165 70 155" stroke="#E5E7EB" stroke-width="2" fill="none" opacity="0.7"/>
+  </g>
+  
+  <!-- Floating elements -->
+  <circle cx="350" cy="50" r="20" fill="#3B82F6" opacity="0.3">
+    <animate attributeName="cy" values="50;40;50" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="50" cy="100" r="15" fill="#10B981" opacity="0.3">
+    <animate attributeName="cy" values="100;90;100" dur="2s" repeatCount="indefinite"/>
+  </circle>
+</svg>
