@@ -92,11 +92,11 @@ const cardSkills = [
   {
     id: 11,
     title: {
-      en: 'AWS',
-      ta: 'ஏடபிள்யூஎஸ்',
+      en: 'Vercel',
+      ta: 'வெர்செல்',
     },
-    img: '/icons/aws.png',
-    color: '#FF9900'
+    img: '/icons/vercel.png',
+    color: '#000000'
   },
   {
     id: 12,
