@@ -6,8 +6,7 @@ import projects from '../../data/projects';
 import { ProjectsContainer, ProjectsContent } from './styles';
 import { Container, Title } from '../../styles/styles';
 import { HiOutlineDesktopComputer } from 'react-icons/hi';
-import { useTranslation } from 'react-i18next';
-import { useRouter } from 'next/router';
+
 import { useThemeContext } from '../../context/ThemeContext';
 
 interface Projects {
@@ -19,24 +18,16 @@ interface Projects {
 }
 
 export function Projects() {
-  const { t, i18n } = useTranslation('common');
-  const router = useRouter();
-  const [currentLang, setCurrentLang] = useState<'en' | 'gu'>('en');
-  const [hoveredDemo, setHoveredDemo] = useState<number | null>(null);
+
   const [activeDemo, setActiveDemo] = useState<{id: number, url: string, title: string, isMaximized: boolean} | null>(null);
   const { currentTheme } = useThemeContext();
-
-  useEffect(() => {
-    const { locale } = router;
-    setCurrentLang(locale as 'en' | 'gu');
-  }, [router.locale]);
 
   return (
     <Container id="projects">
       <Title>
-        {currentLang === 'gu' ? 'કામો' : 'Works'}
+        Works
         <span>
-          <HiOutlineDesktopComputer />{currentLang === 'gu' ? 'પ્રોજેક્ટ' : 'Project'}
+          <HiOutlineDesktopComputer />Project
         </span>
         <img className="vector" width={100} height={100} src="/vectors/code.svg" alt="project" />
       </Title>

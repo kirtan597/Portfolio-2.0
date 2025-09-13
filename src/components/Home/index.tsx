@@ -8,8 +8,7 @@ import { Content, ImgHome, HomeText, Card, Announcement, Logo, Box } from './sty
 import { FiArrowRight } from 'react-icons/fi'
 import { useState } from 'react';
 import Modal from 'react-modal';
-import { useTranslation } from 'react-i18next';
-import { useRouter } from 'next/router';
+
 import { useEffect } from 'react';
 import { useRef } from 'react';
 import * as htmlToImage from 'html-to-image';
@@ -21,7 +20,7 @@ const NAME_ENTRY_ID2 = process.env.NEXT_PUBLIC_NAME_ENTRY_ID2;
 Modal.setAppElement('#__next');
 
 export function HomeHero() {
-  const { t } = useTranslation('common');
+
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalIsOpen2, setModalIsOpen2] = useState(false);
   const [userName, setUserName] = useState('');
@@ -29,16 +28,12 @@ export function HomeHero() {
   const [showConfetti, setShowConfetti] = useState(false);
   const [showCard, setShowCard] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
-  const [currentLang, setCurrentLang] = useState<'en' | 'ta'>('en');
-  const router = useRouter();
   const [scrollY, setScrollY] = useState(0);
   const [mounted, setMounted] = useState(false);
   
   useEffect(() => {
     setMounted(true);
-    const { locale } = router;
-    setCurrentLang(locale as 'en' | 'ta');
-  }, [router.locale]);
+  }, []);
 
   function openModal2() {
     setModalIsOpen2(true);
@@ -131,19 +126,19 @@ export function HomeHero() {
       <Content>
         <HomeText>
           <p>
-            <span className="emoji">👋🏻</span> {currentLang === 'ta' ? 'வணக்கம், எனது பெயர்' : 'Hello, my name is'}
+            <span className="emoji">👋🏻</span> Hello, my name is
           </p>
           <h1>
-            {currentLang === 'ta' ? 'கிர்தன்குமார்' : 'KirtanKumar'}
+            KirtanKumar
           </h1>
           <h2>
-            {currentLang === 'ta' ? 'மென்பொருள் உருவாக்காளர்/AI-வெப் ஆர்வலர்' : 'Software Developer/AI-Web Enthusiast'}
+            Software Developer/AI-Web Enthusiast
           </h2>
 
           <div className="button">
             <Link legacyBehavior href="#projects">
               <ButtonPrimary>
-                <b>{currentLang === 'ta' ? 'திட்டங்களைக் காண்க' : 'See Portfolio'}</b>
+                <b>See Portfolio</b>
                 <FiArrowRight style={{ marginBottom: '-0.3rem' }} size={20} />
               </ButtonPrimary>
             </Link>
@@ -178,11 +173,11 @@ export function HomeHero() {
               }}
             >
               <h2 style={{ textAlign: 'center', color: 'black' }}>
-                {currentLang === 'ta' ? 'அட்டை உருவாக்கவும்' : 'Generate Card'}
+                Generate Card
               </h2>
               <input
                 type="text"
-                placeholder={currentLang === 'ta' ? 'உங்கள் பெயரை உள்ளிடவும்' : 'Enter your name'}
+                placeholder="Enter your name"
                 value={userName}
                 onChange={(e) => setUserName(e.target.value)}
                 style={{
@@ -256,7 +251,7 @@ export function HomeHero() {
                   margin: '0 auto',
                   color: 'white',
                 }}>
-                  {currentLang === 'ta' ? 'பதிவிறக்கவும்' : 'Download'}
+                  Download
                 </Button>
                 <Button
                   onClick={closeModal2}
@@ -270,7 +265,7 @@ export function HomeHero() {
                     color: 'white',
                   }}
                 >
-                  {currentLang === 'ta' ? 'மூடு' : 'Close'}
+                  Close
                 </Button>
               </div>
             </Modal>
@@ -287,7 +282,7 @@ export function HomeHero() {
           />
         )}
         <ImgHome>
-          <img className="home-img" src="/home.png" alt={currentLang === 'ta' ? 'முகப்பு படம்' : 'Image Home'} />
+          <img className="home-img" src="/home.png" alt="Image Home" />
 
           <div className="code">
             <Image

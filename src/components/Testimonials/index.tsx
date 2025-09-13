@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ChatCenteredText } from 'phosphor-react';
 import { Container, Title } from '../../styles/styles';
-import { useRouter } from 'next/router';
+
 import styled, { keyframes } from 'styled-components';
 import testimonials from '../../data/testimonials';
 
@@ -206,14 +206,7 @@ const Dot = styled.button`
 `;
 
 export function Testimonials() {
-  const router = useRouter();
-  const [currentLang, setCurrentLang] = useState<'en' | 'ta'>('en');
   const [currentSlide, setCurrentSlide] = useState(0);
-
-  useEffect(() => {
-    const { locale } = router;
-    setCurrentLang(locale as 'en' | 'ta');
-  }, [router.locale]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -225,9 +218,9 @@ export function Testimonials() {
   return (
     <Container>
       <Title>
-        {currentLang === 'ta' ? 'மக்கள் என்ன சொல்கிறார்கள்' : 'What people say'}
+        What people say
         <span>
-          <ChatCenteredText />{currentLang === 'ta' ? 'சான்றுகள்' : 'Testimonials'}
+          <ChatCenteredText />Testimonials
         </span>
       </Title>
       
