@@ -69,13 +69,13 @@ export function Projects() {
                 position: 'relative'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-20px) rotateX(5deg) scale(1.03)';
-                e.currentTarget.style.boxShadow = '0 40px 80px rgba(0, 0, 0, 0.4), 0 0 40px rgba(102, 126, 234, 0.3)';
-                e.currentTarget.style.border = '2px solid rgba(102, 126, 234, 0.5)';
+                e.currentTarget.style.transform = 'translateY(-10px) scale(1.02)';
+                e.currentTarget.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(102, 126, 234, 0.2)';
+                e.currentTarget.style.border = '2px solid rgba(102, 126, 234, 0.4)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0) rotateX(0deg) scale(1)';
-                e.currentTarget.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1)';
+                e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                e.currentTarget.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)';
                 e.currentTarget.style.border = '2px solid rgba(255, 255, 255, 0.15)';
               }}>
                 <div style={{ 
@@ -88,15 +88,16 @@ export function Projects() {
                     height={350} 
                     src={project.img} 
                     alt={project.title} 
-                    loading="lazy"
+                    {...(index < 2 ? { priority: true } : { loading: 'lazy' })}
+                    quality={85}
                     style={{
                       width: '100%',
                       height: '350px',
                       objectFit: 'contain',
                       objectPosition: 'center',
-                      transition: 'transform 0.6s ease',
-                      filter: 'brightness(1.1) contrast(1.1)',
-                      background: 'rgba(0, 0, 0, 0.1)'
+                      transition: 'transform 0.3s ease',
+                      filter: 'brightness(1.05) contrast(1.05)',
+                      background: 'rgba(0, 0, 0, 0.05)'
                     }}
                   />
                   <div style={{
@@ -132,7 +133,7 @@ export function Projects() {
                   }}>
                     <div style={{
                       fontSize: '1.5rem'
-                    }}>{project.id === 2 ? '🎞🎵' : '🛍'}</div>
+                    }} className="emoji">{project.id === 2 ? '🎞🎵' : '🛍'}</div>
                     <h2 style={{
                       fontSize: '1.75rem',
                       fontWeight: '700',
@@ -179,31 +180,23 @@ export function Projects() {
                     flexDirection: 'column',
                     gap: '1rem'
                   }}>
-                    <div style={{ position: 'relative' }}>
-                      <button 
-                        onMouseEnter={() => {
-                          if (!activeDemo) {
-                            setTimeout(() => {
-                              setActiveDemo({id: project.id, url: project.web, title: project.title, isMaximized: false});
-                            }, 500);
-                          }
-                        }}
-                        onClick={() => window.open(project.web, '_blank')}
-                        style={{
-                          padding: '1rem 1.5rem',
-                          background: '#667eea',
-                          color: 'white',
-                          borderRadius: '20px',
-                          fontWeight: '600',
-                          fontSize: '1rem',
-                          border: 'none',
-                          cursor: 'pointer',
-                          width: '100%'
-                        }}
-                      >
-                        Live Demo →
-                      </button>
-                    </div>
+                    <button 
+                      onClick={() => setActiveDemo({id: project.id, url: project.web, title: project.title, isMaximized: false})}
+                      style={{
+                        padding: '1rem 1.5rem',
+                        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                        color: 'white',
+                        borderRadius: '20px',
+                        fontWeight: '600',
+                        fontSize: '1rem',
+                        border: 'none',
+                        cursor: 'pointer',
+                        width: '100%',
+                        transition: 'all 0.3s ease'
+                      }}
+                    >
+                      <span className="emoji">🚀</span> Live Demo
+                    </button>
                     <a 
                       href={project.github} 
                       target="_blank" 
@@ -234,72 +227,116 @@ export function Projects() {
       </div>
       
       {activeDemo && (
-        <div style={{
-          position: 'fixed',
-          top: activeDemo.isMaximized ? '0' : '20%',
-          left: activeDemo.isMaximized ? '0' : '20%',
-          width: activeDemo.isMaximized ? '100vw' : '60vw',
-          height: activeDemo.isMaximized ? '100vh' : '60vh',
-          background: currentTheme === 'dark' ? '#1a1a1a' : '#ffffff',
-          border: '2px solid #667eea',
-          borderRadius: activeDemo.isMaximized ? '0' : '15px',
-          zIndex: 10000,
-          boxShadow: '0 20px 40px rgba(0,0,0,0.5)',
-          overflow: 'hidden'
-        }}>
-          <div style={{
-            height: '50px',
-            background: '#667eea',
+        <div 
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              setActiveDemo(null);
+            }
+          }}
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '100vh',
+            background: 'rgba(0, 0, 0, 0.9)',
+            zIndex: 99999,
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'space-between',
-            padding: '0 15px',
-            cursor: 'move'
+            justifyContent: 'center',
+            cursor: 'default !important'
           }}>
-            <span style={{ color: 'white', fontWeight: '600', fontSize: '14px' }}>
-              {activeDemo.title.replace(/🎞|🎵|🛍/g, '').trim()}
-            </span>
-            <div style={{ display: 'flex', gap: '10px' }}>
-              <button 
-                onClick={() => setActiveDemo({...activeDemo, isMaximized: !activeDemo.isMaximized})}
+          <div 
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              width: '90vw',
+              height: '90vh',
+              background: '#fff',
+              borderRadius: '15px',
+              overflow: 'hidden',
+              boxShadow: '0 25px 50px rgba(0, 0, 0, 0.5)',
+              cursor: 'default'
+            }}>
+            <div style={{
+              height: '60px',
+              background: '#667eea',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              padding: '0 20px'
+            }}>
+              <span style={{ color: 'white', fontWeight: '600', fontSize: '16px' }}>
+                {activeDemo.title.replace(/🎞|🎵|🛍/g, '').trim()} - Live Demo
+              </span>
+              <div style={{ display: 'flex', gap: '10px' }}>
+                <button 
+                  onClick={() => window.open(activeDemo.url, '_blank')}
+                  style={{
+                    background: 'rgba(255,255,255,0.2)',
+                    border: 'none',
+                    color: 'white',
+                    padding: '8px 12px',
+                    borderRadius: '5px',
+                    cursor: 'pointer',
+                    fontSize: '12px'
+                  }}
+                >
+                  Open in New Tab
+                </button>
+                <button 
+                  onClick={() => setActiveDemo(null)}
+                  style={{
+                    background: 'rgba(255,0,0,0.7)',
+                    border: 'none',
+                    color: 'white',
+                    width: '35px',
+                    height: '35px',
+                    borderRadius: '5px',
+                    cursor: 'pointer !important',
+                    fontSize: '16px',
+                    zIndex: 100000,
+                    position: 'relative'
+                  }}
+                >
+                  ✕
+                </button>
+              </div>
+            </div>
+            <div style={{
+              width: '100%',
+              height: 'calc(100% - 60px)',
+              background: '#f0f0f0',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              position: 'relative'
+            }}>
+              <iframe
+                src={activeDemo.url}
                 style={{
-                  background: 'rgba(255,255,255,0.2)',
+                  width: '100%',
+                  height: '100%',
                   border: 'none',
-                  color: 'white',
-                  width: '30px',
-                  height: '30px',
-                  borderRadius: '5px',
-                  cursor: 'pointer',
-                  fontSize: '12px'
+                  background: '#fff'
                 }}
-              >
-                {activeDemo.isMaximized ? '🗗' : '🗖'}
-              </button>
-              <button 
-                onClick={() => setActiveDemo(null)}
-                style={{
-                  background: 'rgba(255,0,0,0.7)',
-                  border: 'none',
-                  color: 'white',
-                  width: '30px',
-                  height: '30px',
-                  borderRadius: '5px',
-                  cursor: 'pointer',
-                  fontSize: '12px'
+                onLoad={(e) => {
+                  e.currentTarget.style.background = '#fff';
                 }}
-              >
-                ✕
-              </button>
+              />
+              <div style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                color: '#666',
+                fontSize: '14px',
+                pointerEvents: 'none',
+                zIndex: -1
+              }}>
+                Loading...
+              </div>
             </div>
           </div>
-          <iframe
-            src={activeDemo.url}
-            style={{
-              width: '100%',
-              height: 'calc(100% - 50px)',
-              border: 'none'
-            }}
-          />
         </div>
       )}
       

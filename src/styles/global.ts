@@ -4,16 +4,21 @@ export const GlobalStyles = createGlobalStyle`
   body {
     background-color: ${({ theme }) => theme.background};
     color: ${({ theme }) => theme.text};
-    transition: background-color 0.3s ease, color 0.3s ease;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    cursor: none !important; /* Hide default cursor */
+    transition: background-color 0.2s ease, color 0.2s ease;
+    overflow-x: hidden;
+    cursor: none !important;
+    will-change: background-color, color;
   }
     
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: none !important; /* Hide default cursor for all elements */
+    cursor: none !important;
+  }
+
+  *::before, *::after {
+    cursor: none !important;
   }
 
   /* Show default cursor on touch devices */
@@ -92,13 +97,45 @@ export const GlobalStyles = createGlobalStyle`
     /* Applied via JavaScript */
   }
 
-  /* Smooth transitions for interactive elements */
-  a, button, input, textarea, [role="button"], [tabindex] {
-    transition: all 0.2s ease;
+  /* Emoji bounce animation */
+  @keyframes emojiBounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0) scale(1); }
+    40% { transform: translateY(-5px) scale(1.1); }
+    60% { transform: translateY(-2px) scale(1.05); }
   }
 
-  /* Hover effects for better visual feedback */
+  /* Apply to all emojis */
+  span:has-text("🎞"), span:has-text("🎵"), span:has-text("🛍"), span:has-text("👋"), span:has-text("🚀"), span:has-text("📂"),
+  .emoji, [data-emoji] {
+    display: inline-block;
+    animation: emojiBounce 2s ease-in-out infinite;
+    animation-delay: calc(var(--emoji-index, 0) * 0.2s);
+  }
+
+  /* Optimized transitions */
+  a, button, input, textarea, [role="button"], [tabindex] {
+    transition: transform 0.15s ease, opacity 0.15s ease;
+    will-change: transform;
+  }
+
+  /* Reduced hover effects */
   a:hover, button:hover, [role="button"]:hover {
-    transform: translateY(-2px);
+    transform: translateY(-1px);
+  }
+
+  /* Performance optimizations */
+  * {
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 `

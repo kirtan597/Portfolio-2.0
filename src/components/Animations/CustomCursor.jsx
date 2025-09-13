@@ -35,18 +35,28 @@ const CustomCursor = () => {
     
     if (!isDesktop) return;
 
+    let cursorTimeout;
     const updateCursorPosition = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-      setIsVisible(true);
+      if (cursorTimeout) return;
+      cursorTimeout = setTimeout(() => {
+        setMousePosition({ x: e.clientX, y: e.clientY });
+        setIsVisible(true);
+        cursorTimeout = null;
+      }, 8); // ~120fps for smoother cursor
     };
 
     const handleMouseEnter = () => setIsVisible(true);
     const handleMouseLeave = () => setIsVisible(false);
 
+    let hoverTimeout;
     const handleMouseOver = (e) => {
-      const target = e.target;
-      const isHoverable = target && target.matches && target.matches('a, button, [role="button"], input, textarea, select, .cursor-pointer');
-      setIsHovered(isHoverable);
+      if (hoverTimeout) return;
+      hoverTimeout = setTimeout(() => {
+        const target = e.target;
+        const isHoverable = target && target.matches && target.matches('a, button, [role="button"], input, textarea, select, .cursor-pointer');
+        setIsHovered(isHoverable);
+        hoverTimeout = null;
+      }, 50);
     };
 
     // Add event listeners

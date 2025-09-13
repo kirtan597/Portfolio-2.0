@@ -3,9 +3,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { HeaderContainer, MobileIcon, NavMenu, Icons } from './styles'
 import { List, X } from 'phosphor-react'
-import { FiGithub, FiLinkedin, FiInstagram, FiHome, FiUser, FiBriefcase, FiMail, FiCode } from 'react-icons/fi'
-import { FaWhatsapp, FaProjectDiagram, FaRocket } from 'react-icons/fa'
-import { MdOutlineWorkOutline, MdDashboard } from 'react-icons/md'
+import { FiGithub, FiLinkedin, FiInstagram, FiHome, FiUser, FiBriefcase, FiMail } from 'react-icons/fi'
+import { FaWhatsapp, FaProjectDiagram } from 'react-icons/fa'
+import { MdOutlineWorkOutline } from 'react-icons/md'
 import { Button } from '../../styles/styles'
 import { useThemeContext } from '../../context/ThemeContext'
 import { FaSun, FaMoon } from 'react-icons/fa';
@@ -14,7 +14,7 @@ import Settings from '../Settings/SettingsButton';
 import AudioPlayer from '../Music/AudioPlayer';
 import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -61,178 +61,249 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
-    { id: 'home', icon: FiHome, label: 'Home', action: () => window.scrollTo({ top: 0, behavior: 'smooth' }) },
-    { id: 'projects', icon: FaRocket, label: 'Projects', action: () => scrollToSection('projects') },
-    { id: 'skills', icon: FiCode, label: 'Skills', action: () => scrollToSection('skills') },
-    { id: 'about', icon: FiUser, label: 'About', action: () => scrollToSection('about') },
-    { id: 'contact', icon: FiMail, label: 'Contact', action: () => scrollToSection('contact') }
-  ];
-
   return (
     <HeaderContainer>
       <div className="navbar-container">
-        <motion.div 
-          className="logo-section"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, type: "spring" }}
-        >
+        <div className="logo-section">
           <span className="logo-text">Kirtan Panchal</span>
-        </motion.div>
+        </div>
         
-        <nav className="nav-items">
-          <AnimatePresence>
-            {navItems.map((item, index) => {
-              const IconComponent = item.icon;
-              return (
-                <motion.div
-                  key={item.id}
-                  className={`nav-item ${activeSection === item.id ? 'active' : ''}`}
-                  onClick={() => {
-                    item.action();
-                    setActiveSection(item.id);
-                  }}
-                  initial={{ opacity: 0, y: 30, scale: 0.8 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ 
-                    duration: 0.5, 
-                    delay: index * 0.1, 
-                    type: "spring",
-                    stiffness: 300,
-                    damping: 20
-                  }}
-                  whileHover={{ 
-                    scale: 1.1, 
-                    y: -8,
-                    transition: { type: "spring", stiffness: 400, damping: 10 }
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <motion.div
-                    whileHover={{ 
-                      rotate: [0, -15, 15, -15, 0],
-                      scale: 1.3
-                    }}
-                    transition={{ duration: 0.6, type: "spring" }}
-                  >
-                    <IconComponent className="nav-icon" />
-                  </motion.div>
-                  <motion.span
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: index * 0.1 + 0.3 }}
-                  >
-                    {item.label}
-                  </motion.span>
-                </motion.div>
-              );
-            })}
-          </AnimatePresence>
+        <nav className="nav-items" style={{
+          display: 'flex',
+          gap: '1rem',
+          alignItems: 'center'
+        }}>
+          <motion.div 
+            className={`nav-item ${activeSection === 'home' ? 'active' : ''}`}
+            onClick={() => {
+              if (router.pathname !== '/') {
+                router.push('/');
+              } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                setActiveSection('home');
+              }
+            }}
+            whileHover={{ scale: 1.05, y: -8, boxShadow: '0 15px 35px rgba(102, 126, 234, 0.4)' }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
+            style={{
+              cursor: 'pointer',
+              background: activeSection === 'home' ? `linear-gradient(135deg, ${currentTheme === 'dark' ? '#667eea' : '#4f46e5'}, ${currentTheme === 'dark' ? '#764ba2' : '#7c3aed'})` : currentTheme === 'dark' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)',
+              backdropFilter: 'blur(20px)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              borderRadius: '15px',
+              padding: '12px 16px',
+              boxShadow: '0 8px 25px rgba(0, 0, 0, 0.15)'
+            }}
+          >
+            <motion.div
+              whileHover={{ rotate: 720 }}
+              whileTap={{ rotate: 1080 }}
+              transition={{ duration: 0.4, type: "spring" }}
+            >
+              <FiHome className="nav-icon" />
+            </motion.div>
+            <span>Home</span>
+          </motion.div>
+          
+          <motion.div 
+            className={`nav-item ${activeSection === 'projects' ? 'active' : ''}`}
+            onClick={() => scrollToSection('projects')}
+            whileHover={{ scale: 1.05, y: -8, boxShadow: '0 15px 35px rgba(102, 126, 234, 0.4)' }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
+            style={{
+              cursor: 'pointer',
+              background: activeSection === 'projects' ? `linear-gradient(135deg, ${currentTheme === 'dark' ? '#667eea' : '#4f46e5'}, ${currentTheme === 'dark' ? '#764ba2' : '#7c3aed'})` : currentTheme === 'dark' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)',
+              backdropFilter: 'blur(20px)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              borderRadius: '15px',
+              padding: '12px 16px',
+              boxShadow: '0 8px 25px rgba(0, 0, 0, 0.15)'
+            }}
+          >
+            <motion.div
+              whileHover={{ rotate: 720 }}
+              whileTap={{ rotate: 1080 }}
+              transition={{ duration: 0.4, type: "spring" }}
+            >
+              <FaProjectDiagram className="nav-icon" />
+            </motion.div>
+            <span>Projects</span>
+          </motion.div>
+          
+          <motion.div 
+            className={`nav-item ${activeSection === 'skills' ? 'active' : ''}`}
+            onClick={() => scrollToSection('skills')}
+            whileHover={{ scale: 1.05, y: -8, boxShadow: '0 15px 35px rgba(102, 126, 234, 0.4)' }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
+            style={{
+              cursor: 'pointer',
+              background: activeSection === 'skills' ? `linear-gradient(135deg, ${currentTheme === 'dark' ? '#667eea' : '#4f46e5'}, ${currentTheme === 'dark' ? '#764ba2' : '#7c3aed'})` : currentTheme === 'dark' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)',
+              backdropFilter: 'blur(20px)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              borderRadius: '15px',
+              padding: '12px 16px',
+              boxShadow: '0 8px 25px rgba(0, 0, 0, 0.15)'
+            }}
+          >
+            <motion.div
+              whileHover={{ rotate: 720 }}
+              whileTap={{ rotate: 1080 }}
+              transition={{ duration: 0.4, type: "spring" }}
+            >
+              <MdOutlineWorkOutline className="nav-icon" />
+            </motion.div>
+            <span>Skills</span>
+          </motion.div>
+          
+          <motion.div 
+            className={`nav-item ${activeSection === 'about' ? 'active' : ''}`}
+            onClick={() => scrollToSection('about')}
+            whileHover={{ scale: 1.05, y: -8, boxShadow: '0 15px 35px rgba(102, 126, 234, 0.4)' }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: 0.4 }}
+            style={{
+              cursor: 'pointer',
+              background: activeSection === 'about' ? `linear-gradient(135deg, ${currentTheme === 'dark' ? '#667eea' : '#4f46e5'}, ${currentTheme === 'dark' ? '#764ba2' : '#7c3aed'})` : currentTheme === 'dark' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)',
+              backdropFilter: 'blur(20px)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              borderRadius: '15px',
+              padding: '12px 16px',
+              boxShadow: '0 8px 25px rgba(0, 0, 0, 0.15)'
+            }}
+          >
+            <motion.div
+              whileHover={{ rotate: 720 }}
+              whileTap={{ rotate: 1080 }}
+              transition={{ duration: 0.4, type: "spring" }}
+            >
+              <FiUser className="nav-icon" />
+            </motion.div>
+            <span>About</span>
+          </motion.div>
+          
+          <motion.div 
+            className={`nav-item ${activeSection === 'contact' ? 'active' : ''}`}
+            onClick={() => scrollToSection('contact')}
+            whileHover={{ scale: 1.05, y: -8, boxShadow: '0 15px 35px rgba(102, 126, 234, 0.4)' }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: 0.5 }}
+            style={{
+              cursor: 'pointer',
+              background: activeSection === 'contact' ? `linear-gradient(135deg, ${currentTheme === 'dark' ? '#667eea' : '#4f46e5'}, ${currentTheme === 'dark' ? '#764ba2' : '#7c3aed'})` : currentTheme === 'dark' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)',
+              backdropFilter: 'blur(20px)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              borderRadius: '15px',
+              padding: '12px 16px',
+              boxShadow: '0 8px 25px rgba(0, 0, 0, 0.15)'
+            }}
+          >
+            <motion.div
+              whileHover={{ rotate: 720 }}
+              whileTap={{ rotate: 1080 }}
+              transition={{ duration: 0.4, type: "spring" }}
+            >
+              <FiMail className="nav-icon" />
+            </motion.div>
+            <span>Contact</span>
+          </motion.div>
           
           <motion.button 
             className="theme-toggle-nav"
             onClick={toggleTheme}
-            whileHover={{ 
-              scale: 1.15, 
-              y: -8, 
-              rotate: 180,
-              transition: { type: "spring", stiffness: 400, damping: 10 }
+            whileHover={{ scale: 1.05, y: -8, rotate: 180, boxShadow: '0 15px 35px rgba(255, 193, 7, 0.4)' }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4, delay: 0.6 }}
+            style={{
+              background: currentTheme === 'dark' ? 'linear-gradient(135deg, #ffc107, #ff9800)' : 'linear-gradient(135deg, #f59e0b, #ea580c)',
+              backdropFilter: 'blur(20px)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              borderRadius: '15px',
+              padding: '12px 16px',
+              boxShadow: '0 8px 25px rgba(0, 0, 0, 0.15)',
+              color: 'white'
             }}
-            whileTap={{ scale: 0.9 }}
-            initial={{ opacity: 0, scale: 0, rotate: -180 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
-            transition={{ duration: 0.6, delay: 0.8, type: "spring" }}
           >
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentTheme}
-                initial={{ rotate: -180, opacity: 0, scale: 0 }}
-                animate={{ rotate: 0, opacity: 1, scale: 1 }}
-                exit={{ rotate: 180, opacity: 0, scale: 0 }}
-                transition={{ duration: 0.4, type: "spring" }}
-              >
-                {currentTheme === 'dark' ? <FaSun /> : <FaMoon />}
-              </motion.div>
-            </AnimatePresence>
+            <motion.div
+              key={currentTheme}
+              initial={{ rotate: -360, opacity: 0 }}
+              animate={{ rotate: 0, opacity: 1 }}
+              exit={{ rotate: 360, opacity: 0 }}
+              transition={{ duration: 0.6, type: "spring" }}
+            >
+              {currentTheme === 'dark' ? <FaSun /> : <FaMoon />}
+            </motion.div>
           </motion.button>
         </nav>
+        
+
       </div>
       
       <MobileIcon onClick={handleOpen}>
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={open ? 'close' : 'open'}
-            initial={{ rotate: 0, scale: 0 }}
-            animate={{ rotate: 0, scale: 1 }}
-            exit={{ rotate: 90, scale: 0 }}
-            transition={{ duration: 0.2 }}
-          >
-            {open ? (
-              <X size={30} weight="bold" />
-            ) : (
-              <List size={30} weight="bold" />
-            )}
-          </motion.div>
-        </AnimatePresence>
+        {open ? (
+          <X size={30} weight="bold" />
+        ) : (
+          <List size={30} weight="bold" />
+        )}
       </MobileIcon>
       
       <NavMenu onClick={handleOpen} open={open}>
-        <motion.ul
-          initial={{ opacity: 0 }}
-          animate={{ opacity: open ? 1 : 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          {navItems.map((item, index) => {
-            const IconComponent = item.icon;
-            return (
-              <motion.li
-                key={item.id}
-                initial={{ x: 100, opacity: 0 }}
-                animate={{ x: open ? 0 : 100, opacity: open ? 1 : 0 }}
-                transition={{ delay: index * 0.1, duration: 0.3 }}
-                onClick={() => {
-                  item.action();
-                  setActiveSection(item.id);
-                  setOpen(false);
-                }}
-              >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
-                  <IconComponent />
-                  <span>{item.label}</span>
-                </div>
-              </motion.li>
-            );
-          })}
-        </motion.ul>
+        <ul>
+          <li>
+            <Link href={'/'}>
+              <FiHome />
+              <span>Home</span>
+            </Link>
+          </li>
+          <li onClick={() => scrollToSection('projects')}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
+              <FaProjectDiagram />
+              <span>Projects</span>
+            </div>
+          </li>
+          <li onClick={() => scrollToSection('skills')}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
+              <MdOutlineWorkOutline />
+              <span>Skills</span>
+            </div>
+          </li>
+          <li onClick={() => scrollToSection('about')}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
+              <FiUser />
+              <span>About</span>
+            </div>
+          </li>
+          <li onClick={() => scrollToSection('contact')}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
+              <FiMail />
+              <span>Contact</span>
+            </div>
+          </li>
+        </ul>
         <Icons>
-          <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: open ? 0 : 50, opacity: open ? 1 : 0 }}
-            transition={{ delay: 0.5, duration: 0.3 }}
-          >
-            <Link href={'https://github.com/kirtan597'} target="_blank">
-              <FiGithub />
-            </Link>
-          </motion.div>
-          <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: open ? 0 : 50, opacity: open ? 1 : 0 }}
-            transition={{ delay: 0.6, duration: 0.3 }}
-          >
-            <Link href={'https://linkedin.com/in/kirtan-panchal-309760320'} target="_blank">
-              <FiLinkedin />
-            </Link>
-          </motion.div>
-          <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: open ? 0 : 50, opacity: open ? 1 : 0 }}
-            transition={{ delay: 0.7, duration: 0.3 }}
-          >
-            <Link href={'https://www.instagram.com/kirtannn_18/'} target="_blank">
-              <FiInstagram />
-            </Link>
-          </motion.div>
+          <Link href={'https://github.com/kirtan597'} target="_blank">
+            <FiGithub />
+          </Link>
+          <Link href={'https://linkedin.com/in/kirtan-panchal-309760320'} target="_blank">
+            <FiLinkedin />
+          </Link>
+          <Link href={'https://www.instagram.com/kirtannn_18/'} target="_blank">
+            <FiInstagram />
+          </Link>
         </Icons>
       </NavMenu>
     </HeaderContainer>

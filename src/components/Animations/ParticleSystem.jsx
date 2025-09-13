@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import styled, { useTheme } from 'styled-components';
 
 const ParticleSystem = ({ 
-  particleCount = 80, 
-  connectionDistance = 120,
-  mouseRadius = 150,
-  speed = 0.5 
+  particleCount = 30, 
+  connectionDistance = 80,
+  mouseRadius = 100,
+  speed = 0.3 
 }) => {
   const canvasRef = useRef(null);
   const animationRef = useRef(null);
@@ -102,7 +102,7 @@ const ParticleSystem = ({
     }
   };
 
-  // Animation loop
+  // Animation loop with throttling
   const animate = () => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
@@ -116,20 +116,27 @@ const ParticleSystem = ({
       particle.draw(ctx);
     });
 
-    // Draw connections
-    drawConnections(ctx, particlesRef.current);
+    // Draw connections (reduced frequency)
+    if (Math.random() > 0.3) {
+      drawConnections(ctx, particlesRef.current);
+    }
 
     animationRef.current = requestAnimationFrame(animate);
   };
 
-  // Handle mouse movement
+  // Throttled mouse movement
+  let mouseTimeout;
   const handleMouseMove = (event) => {
-    const canvas = canvasRef.current;
-    const rect = canvas.getBoundingClientRect();
-    mouseRef.current = {
-      x: event.clientX - rect.left,
-      y: event.clientY - rect.top
-    };
+    if (mouseTimeout) return;
+    mouseTimeout = setTimeout(() => {
+      const canvas = canvasRef.current;
+      const rect = canvas.getBoundingClientRect();
+      mouseRef.current = {
+        x: event.clientX - rect.left,
+        y: event.clientY - rect.top
+      };
+      mouseTimeout = null;
+    }, 16); // ~60fps
   };
 
   // Handle resize

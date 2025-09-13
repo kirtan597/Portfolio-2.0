@@ -12,7 +12,7 @@ import * as T from '../styles/styles';
 import { HiOutlineDesktopComputer } from 'react-icons/hi';
 import { FaSearch } from 'react-icons/fa';
 import { ArrowRight } from 'phosphor-react';
-import { Publications } from '../components/Publications';
+
 import { Button } from '@mantine/core';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
@@ -239,7 +239,7 @@ export default function Blog() {
         </S.BlogContainer>
         <NewsletterForm />
       </T.Section>
-      <Publications />
+
       <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
       <script src={botkey} defer></script>
       <Footer />

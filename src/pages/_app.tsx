@@ -12,6 +12,8 @@ import { Analytics } from '@vercel/analytics/react';
 import ParticleSystem from '../components/Animations/ParticleSystem';
 import PageTransition from '../components/Animations/PageTransition';
 import CustomCursor from '../components/Animations/CustomCursor';
+import LazyLoad from '../components/Animations/LazyLoad';
+import PerformanceMonitor from '../components/Performance/PerformanceMonitor';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { initGA, logPageView } from '../utils/analytics';
 import { lightTheme } from '../styles/themes/default';
@@ -76,13 +78,16 @@ function MyApp({ Component, pageProps }: AppProps) {
             height={3}
             showOnShallow
           />
-          <ParticleSystem 
-            particleCount={100}
-            connectionDistance={100}
-            mouseRadius={150}
-            speed={0.5}
-          />
+          <LazyLoad>
+            <ParticleSystem 
+              particleCount={20}
+              connectionDistance={60}
+              mouseRadius={80}
+              speed={0.2}
+            />
+          </LazyLoad>
           <CustomCursor />
+          <PerformanceMonitor />
           <Toaster />
           <Header />
           <GlobalStyles />

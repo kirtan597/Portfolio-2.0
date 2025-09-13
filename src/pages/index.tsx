@@ -11,7 +11,6 @@ import { LoadingScreen } from "../components/Animations/LoadingScreen";
 import { Education } from "../components/Education";
 
 import { Testimonials } from "../components/Testimonials";
-import { Publications } from "../components/Publications";
 import { Wakatime } from "../components/Coding/Wakatime";
 import { Certificates } from "../components/Certificates/index";
 import { Jokes } from "../components/Misc/Joke";
@@ -77,9 +76,6 @@ export default function Home() {
 
 
         <FadeInAnimation delay={0.9}>
-          <Publications />
-        </FadeInAnimation>
-        <FadeInAnimation delay={1.0}>
           <Certificates />
         </FadeInAnimation>
         <div id="projects">

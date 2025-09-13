@@ -45,10 +45,17 @@ export function HomeHero() {
   }
 
   useEffect(() => {
-  const handleScroll = () => setScrollY(window.scrollY);
-  window.addEventListener('scroll', handleScroll);
-  return () => window.removeEventListener('scroll', handleScroll);
-}, []);
+    let scrollTimeout;
+    const handleScroll = () => {
+      if (scrollTimeout) return;
+      scrollTimeout = setTimeout(() => {
+        setScrollY(window.scrollY);
+        scrollTimeout = null;
+      }, 16); // ~60fps
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     // Fetch the current date using JavaScript's built-in Date object
@@ -124,7 +131,7 @@ export function HomeHero() {
       <Content>
         <HomeText>
           <p>
-            <span>👋🏻</span> {currentLang === 'ta' ? 'வணக்கம், எனது பெயர்' : 'Hello, my name is'}
+            <span className="emoji">👋🏻</span> {currentLang === 'ta' ? 'வணக்கம், எனது பெயர்' : 'Hello, my name is'}
           </p>
           <h1>
             {currentLang === 'ta' ? 'கிர்தன்குமார்' : 'KirtanKumar'}

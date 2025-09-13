@@ -145,14 +145,22 @@ const TestimonialText = styled.div`
   }
   
   p {
-    color: ${props => props.theme.text};
+    color: ${props => props.theme.textPrimary || (props.theme.background === '#ffffff' ? '#1f2937' : '#f9fafb')};
     line-height: 1.7;
     font-size: 1.1rem;
     margin: 0;
     font-style: italic;
     position: relative;
     z-index: 1;
+    font-weight: 600;
+    text-shadow: ${props => props.theme.background === '#ffffff' ? '0 1px 2px rgba(0,0,0,0.1)' : '0 1px 2px rgba(255,255,255,0.1)'};
   }
+`;
+
+const bounce = keyframes`
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-8px); }
+  60% { transform: translateY(-4px); }
 `;
 
 const StarsContainer = styled.div`
@@ -164,6 +172,14 @@ const StarsContainer = styled.div`
   span {
     font-size: 1.3rem;
     filter: drop-shadow(0 0 8px #ffd700);
+    animation: ${bounce} 2s ease-in-out infinite;
+    animation-delay: ${props => props.index * 0.1}s;
+    cursor: pointer;
+    
+    &:hover {
+      transform: scale(1.2);
+      filter: drop-shadow(0 0 12px #ffd700);
+    }
   }
 `;
 
@@ -237,7 +253,7 @@ export function Testimonials() {
                 
                 <StarsContainer>
                   {[...Array(5)].map((_, i) => (
-                    <span key={i}>⭐</span>
+                    <span key={i} style={{ animationDelay: `${i * 0.1}s` }}>⭐</span>
                   ))}
                 </StarsContainer>
               </TestimonialCard>

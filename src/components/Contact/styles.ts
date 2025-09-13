@@ -125,3 +125,23 @@ export const FormContent = styled.form`
     color: ${props => props.theme.firstColor};
   }
 `
+
+export const FeedbackButton = styled.button`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: ${props => props.theme.firstColor};
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 2rem auto;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: ${props => props.theme.secondColor};
+    transform: translateY(-2px);
+  }
+`
