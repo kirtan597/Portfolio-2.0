@@ -2,6 +2,10 @@
 
 <div align="center">
   <img src="https://socialify.git.ci/kirtan597/Portfolio-2.0/image?description=1&font=Inter&forks=1&issues=1&language=1&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Auto" alt="Portfolio 2.0" width="640" height="320" />
+  
+  <br/>
+  
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=28&pause=1000&color=667EEA&background=00000000&center=true&vCenter=true&width=600&lines=Full+Stack+Developer;React+%26+Next.js+Expert;UI%2FUX+Enthusiast;Open+Source+Contributor" alt="Typing SVG" />
 </div>
 
 <p align="center">
@@ -28,6 +32,9 @@
 [![GitHub Forks](https://custom-icon-badges.demolab.com/github/forks/kirtan597/Portfolio-2.0?color=4285F4&style=for-the-badge&logo=fork&logoColor=white)](https://github.com/kirtan597/Portfolio-2.0/network/members)
 [![License](https://custom-icon-badges.demolab.com/badge/License-MIT-00D26A?style=for-the-badge&logo=law&logoColor=white)](LICENSE)
 
+![Profile Views](https://komarev.com/ghpvc/?username=kirtan597&label=Profile%20Views&color=667eea&style=for-the-badge)
+![GitHub Followers](https://img.shields.io/github/followers/kirtan597?label=Followers&style=for-the-badge&color=764ba2&logo=github)
+
 </div>
 
 ---
@@ -41,7 +48,7 @@
 </div>
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Desktop%20Computer.png" alt="Computer" width="50" height="50" />
+  <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 </div>
 
 ---
@@ -93,6 +100,15 @@
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Hammer%20and%20Wrench.png" alt="Tools" width="25" height="25" /> Tech Stack
 
 <div align="center">
+  <img src="https://user-images.githubusercontent.com/74038190/212257454-16e3712e-945a-4ca2-b238-408ad0bf87e6.gif" width="100">
+  <img src="https://user-images.githubusercontent.com/74038190/212257472-08e52665-c503-4bd9-aa20-f5a4dae769b5.gif" width="100">
+  <img src="https://user-images.githubusercontent.com/74038190/212257468-1e9a91f1-b626-4baa-b15d-5c385dfa7ed2.gif" width="100">
+  <img src="https://user-images.githubusercontent.com/74038190/212257465-7ce8d493-cac5-494e-982a-5a9deb852c4b.gif" width="100">
+  <img src="https://user-images.githubusercontent.com/74038190/212257460-738ff738-247f-4445-a718-cdd0ca76e2db.gif" width="100">
+  <img src="https://user-images.githubusercontent.com/74038190/212257467-871d32b7-e401-42e8-a166-fcfd7baa4c6b.gif" width="100">
+</div>
+
+<div align="center">
 
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Desktop%20Computer.png" alt="Computer" width="20" height="20" /> **Frontend Technologies**
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
@@ -123,6 +139,10 @@
 ---
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Rocket.png" alt="Rocket" width="25" height="25" /> Quick Start
+
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/74038190/212284158-e840e285-664b-44d7-b79b-e264b5e54825.gif" width="400">
+</div>
 
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Clipboard.png" alt="Clipboard" width="20" height="20" /> Prerequisites
 - **Node.js** 18.0 or higher
@@ -158,6 +178,10 @@ yarn dev
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bar%20Chart.png" alt="Chart" width="25" height="25" /> Featured Projects
 
 <div align="center">
+  <img src="https://user-images.githubusercontent.com/74038190/212284087-bbe7e430-757e-4901-90bf-4cd2ce3e1852.gif" width="100">
+</div>
+
+<div align="center">
 
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Shopping%20Cart.png" alt="Cart" width="20" height="20" /> **KPCart - E-commerce Platform**
 [![KPCart](https://img.shields.io/badge/🛍️_KPCart-E--commerce_Platform-FF6B6B?style=for-the-badge)](https://kpcart.netlify.app/)
@@ -187,48 +211,48 @@ yarn dev
 
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Chart%20Increasing.png" alt="Stats" width="20" height="20" /> **GitHub Stats Overview**
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=kirtan597&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="GitHub Stats" width="48%" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=kirtan597&theme=tokyonight&hide_border=true" alt="GitHub Streak" width="48%" />
-</p>
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=kirtan597&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&bg_color=0D1117&title_color=667eea&icon_color=764ba2&text_color=ffffff" alt="GitHub Stats" height="180" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=kirtan597&theme=tokyonight&hide_border=true&background=0D1117&stroke=667eea&ring=764ba2&fire=667eea&currStreakLabel=ffffff" alt="GitHub Streak" height="180" />
+</div>
 
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Hammer%20and%20Wrench.png" alt="Tools" width="20" height="20" /> **Most Used Languages**
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=kirtan597&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" alt="Top Languages" width="60%" />
-</p>
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=kirtan597&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&bg_color=0D1117&title_color=667eea&text_color=ffffff" alt="Top Languages" height="180" />
+</div>
 
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Calendar.png" alt="Calendar" width="20" height="20" /> **Contribution Activity**
 
-<p align="center">
-  <img src="https://ghchart.rshah.org/409ba5/kirtan597" alt="GitHub Contribution Calendar" width="90%" />
-</p>
+<div align="center">
+  <img src="https://ghchart.rshah.org/667eea/kirtan597" alt="GitHub Contribution Calendar" width="100%" />
+</div>
 
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=kirtan597&theme=tokyo-night&hide_border=true&area=true" alt="Contribution Graph" width="90%" />
-</p>
+<div align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=kirtan597&theme=react-dark&bg_color=0D1117&color=667eea&line=764ba2&point=ffffff&area=true&hide_border=true" alt="Contribution Graph" width="100%" />
+</div>
 
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Trophy.png" alt="Trophy" width="20" height="20" /> **GitHub Trophies**
 
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=kirtan597&theme=tokyonight&no-frame=true&row=1&column=6" alt="GitHub Trophies" width="80%" />
-</p>
+<div align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=kirtan597&theme=radical&no-frame=true&no-bg=true&margin-w=4&row=2&column=4" alt="GitHub Trophies" width="100%" />
+</div>
 
-### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Fire.png" alt="Fire" width="20" height="20" /> **Coding Stats**
+### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Fire.png" alt="Fire" width="20" height="20" /> **Detailed Coding Stats**
 
-<p align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=kirtan597&theme=tokyonight" alt="Profile Summary" width="80%" />
-</p>
+<div align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=kirtan597&theme=github_dark" alt="Profile Summary" width="100%" />
+</div>
 
-<p align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=kirtan597&theme=tokyonight" alt="Repos per Language" width="48%" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=kirtan597&theme=tokyonight" alt="Most Commit Language" width="48%" />
-</p>
+<div align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=kirtan597&theme=github_dark" alt="Repos per Language" height="180" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=kirtan597&theme=github_dark" alt="Most Commit Language" height="180" />
+</div>
 
-<p align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=kirtan597&theme=tokyonight" alt="Stats" width="48%" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=kirtan597&theme=tokyonight&utcOffset=5.5" alt="Productive Time" width="48%" />
-</p>
+<div align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=kirtan597&theme=github_dark" alt="Stats" height="180" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=kirtan597&theme=github_dark&utcOffset=5.5" alt="Productive Time" height="180" />
+</div>
 
 </div>
 
@@ -298,7 +322,13 @@ If this project helped you, please consider giving it a ⭐!
 
 [![Star This Repository](https://img.shields.io/badge/⭐_Star_This_Repository-FFD700?style=for-the-badge)](https://github.com/kirtan597/Portfolio-2.0/stargazers)
 
+<div align="center">
+  <img src="https://github.com/kirtan597/kirtan597/blob/output/github-contribution-grid-snake.svg" alt="Snake animation" />
+</div>
+
 **Made with <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" alt="Heart" width="16" height="16" /> by [Kirtankumar Panchal](https://github.com/kirtan597)**
+
+<img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width="100">
 
 *© 2025 Portfolio 2.0. All rights reserved.*
 
