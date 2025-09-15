@@ -40,7 +40,7 @@ export function HomeHero() {
   }
 
   useEffect(() => {
-    let scrollTimeout;
+    let scrollTimeout: NodeJS.Timeout | null = null;
     const handleScroll = () => {
       if (scrollTimeout) return;
       scrollTimeout = setTimeout(() => {

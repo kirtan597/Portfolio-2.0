@@ -128,11 +128,36 @@ export function Wakatime() {
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
           marginBottom: '1rem'
-        }}>🏆 GitHub Trophies</h3>
+        }}>🏆 GitHub Achievements</h3>
         <img 
           src="https://github-profile-trophy.vercel.app/?username=kirtan597&theme=radical&no-frame=true&no-bg=true&margin-w=4&row=2&column=4"
           alt="GitHub Trophies"
           style={{ width: '100%', maxWidth: '900px' }}
+        />
+      </div>
+
+      {/* Contribution Calendar */}
+      <div style={{
+        background: 'rgba(255, 255, 255, 0.03)',
+        backdropFilter: 'blur(10px)',
+        borderRadius: '20px',
+        border: '1px solid rgba(255, 255, 255, 0.08)',
+        padding: '2rem',
+        margin: '2rem auto',
+        maxWidth: '1200px',
+        textAlign: 'center'
+      }}>
+        <h3 style={{
+          fontSize: '1.5rem',
+          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          marginBottom: '1rem'
+        }}>📅 GitHub Contribution Calendar</h3>
+        <img 
+          src="https://ghchart.rshah.org/409ba5/kirtan597"
+          alt="GitHub Contribution Calendar"
+          style={{ width: '100%', maxWidth: '900px', borderRadius: '10px' }}
         />
       </div>
 
@@ -153,10 +178,74 @@ export function Wakatime() {
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
           marginBottom: '1rem'
-        }}>📈 Contribution Activity</h3>
+        }}>📈 Contribution Activity Graph</h3>
         <img 
           src="https://github-readme-activity-graph.vercel.app/graph?username=kirtan597&theme=react-dark&bg_color=0D1117&color=667eea&line=764ba2&point=ffffff&area=true&hide_border=true"
           alt="Activity Graph"
+          style={{ width: '100%', borderRadius: '10px' }}
+        />
+      </div>
+
+      {/* Profile Summary Cards */}
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
+        gap: '2rem',
+        margin: '2rem auto',
+        maxWidth: '1200px'
+      }}>
+        <div style={{
+          background: 'rgba(255, 255, 255, 0.03)',
+          backdropFilter: 'blur(10px)',
+          borderRadius: '20px',
+          border: '1px solid rgba(255, 255, 255, 0.08)',
+          padding: '1rem',
+          textAlign: 'center'
+        }}>
+          <img 
+            src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=kirtan597&theme=github_dark"
+            alt="Repos per Language"
+            style={{ width: '100%', maxWidth: '400px', borderRadius: '10px' }}
+          />
+        </div>
+        
+        <div style={{
+          background: 'rgba(255, 255, 255, 0.03)',
+          backdropFilter: 'blur(10px)',
+          borderRadius: '20px',
+          border: '1px solid rgba(255, 255, 255, 0.08)',
+          padding: '1rem',
+          textAlign: 'center'
+        }}>
+          <img 
+            src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=kirtan597&theme=github_dark"
+            alt="Most Commit Language"
+            style={{ width: '100%', maxWidth: '400px', borderRadius: '10px' }}
+          />
+        </div>
+      </div>
+
+      {/* Detailed Profile Summary */}
+      <div style={{
+        background: 'rgba(255, 255, 255, 0.03)',
+        backdropFilter: 'blur(10px)',
+        borderRadius: '20px',
+        border: '1px solid rgba(255, 255, 255, 0.08)',
+        padding: '2rem',
+        margin: '2rem auto',
+        maxWidth: '1200px',
+        textAlign: 'center'
+      }}>
+        <h3 style={{
+          fontSize: '1.5rem',
+          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          marginBottom: '1rem'
+        }}>📊 Profile Summary</h3>
+        <img 
+          src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=kirtan597&theme=github_dark"
+          alt="Profile Summary"
           style={{ width: '100%', borderRadius: '10px' }}
         />
       </div>

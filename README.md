@@ -98,10 +98,16 @@
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
 ![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
 
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Cloud.png" alt="Cloud" width="20" height="20" /> **Backend & Services**
+![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
 ![EmailJS](https://img.shields.io/badge/EmailJS-013243?style=for-the-badge&logo=minutemailer&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 ![Google Analytics](https://img.shields.io/badge/Google%20Analytics-E37400?style=for-the-badge&logo=google%20analytics&logoColor=white)
@@ -170,6 +176,59 @@ yarn dev
 **Features:** Movies & Music Sections • Infinite Scroll • Modal Views • Search & Filter
 
 [<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Globe%20Showing%20Europe-Africa.png" alt="Globe" width="16" height="16" /> Live Demo](https://kpxhub.netlify.app/) | [<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/File%20Folder.png" alt="Folder" width="16" height="16" /> GitHub](https://github.com/kirtan597/MoviesHub)
+
+</div>
+
+---
+
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bar%20Chart.png" alt="Chart" width="25" height="25" /> GitHub Statistics & Coding Activity
+
+<div align="center">
+
+### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Chart%20Increasing.png" alt="Stats" width="20" height="20" /> **GitHub Stats Overview**
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=kirtan597&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="GitHub Stats" width="48%" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=kirtan597&theme=tokyonight&hide_border=true" alt="GitHub Streak" width="48%" />
+</p>
+
+### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Hammer%20and%20Wrench.png" alt="Tools" width="20" height="20" /> **Most Used Languages**
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=kirtan597&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" alt="Top Languages" width="60%" />
+</p>
+
+### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Calendar.png" alt="Calendar" width="20" height="20" /> **Contribution Activity**
+
+<p align="center">
+  <img src="https://ghchart.rshah.org/409ba5/kirtan597" alt="GitHub Contribution Calendar" width="90%" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=kirtan597&theme=tokyo-night&hide_border=true&area=true" alt="Contribution Graph" width="90%" />
+</p>
+
+### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Trophy.png" alt="Trophy" width="20" height="20" /> **GitHub Trophies**
+
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=kirtan597&theme=tokyonight&no-frame=true&row=1&column=6" alt="GitHub Trophies" width="80%" />
+</p>
+
+### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Fire.png" alt="Fire" width="20" height="20" /> **Coding Stats**
+
+<p align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=kirtan597&theme=tokyonight" alt="Profile Summary" width="80%" />
+</p>
+
+<p align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=kirtan597&theme=tokyonight" alt="Repos per Language" width="48%" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=kirtan597&theme=tokyonight" alt="Most Commit Language" width="48%" />
+</p>
+
+<p align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=kirtan597&theme=tokyonight" alt="Stats" width="48%" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=kirtan597&theme=tokyonight&utcOffset=5.5" alt="Productive Time" width="48%" />
+</p>
 
 </div>
 

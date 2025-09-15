@@ -17,7 +17,7 @@ const SliderContainer = styled.div`
   padding: 2rem 0;
 `;
 
-const SliderWrapper = styled.div`
+const SliderWrapper = styled.div<{ currentSlide: number }>`
   display: flex;
   transition: transform 0.6s ease;
   transform: translateX(${props => props.currentSlide * -100}%);
@@ -173,7 +173,6 @@ const StarsContainer = styled.div`
     font-size: 1.3rem;
     filter: drop-shadow(0 0 8px #ffd700);
     animation: ${bounce} 2s ease-in-out infinite;
-    animation-delay: ${props => props.index * 0.1}s;
     cursor: pointer;
     
     &:hover {
@@ -190,7 +189,7 @@ const NavigationDots = styled.div`
   margin-top: 2rem;
 `;
 
-const Dot = styled.button`
+const Dot = styled.button<{ active: boolean }>`
   width: 12px;
   height: 12px;
   border-radius: 50%;

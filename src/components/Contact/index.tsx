@@ -5,31 +5,20 @@ import { Description, Section, Title } from '../../styles/styles'
 import { ContainerContact, ContactContent, ResponsiveIframeContainer, FeedbackButton } from './styles'
 import { BsWhatsapp } from 'react-icons/bs'
 import { Envelope, TelegramLogo, LinkedinLogo, PencilSimple } from 'phosphor-react'
-import { useTranslation } from 'react-i18next'
-import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
-
 const calendy = process.env.NEXT_PUBLIC_CAL_COM_URL;
 const calender = process.env.NEXT_PUBLIC_PORTFOLIO_CALENDER_URL;
 
 export function Contact() {
-  const { t, i18n } = useTranslation('common');
-  const router = useRouter();
-  const [currentLang, setCurrentLang] = useState<'en' | 'ta'>('en');
-
-  useEffect(() => {
-    const { locale } = router;
-    setCurrentLang(locale as 'en' | 'ta');
-  }, [router.locale]);
 
   return (
     <Section>
       <Title>
         <p>../contact</p>
-        {currentLang === 'ta' ? 'தொடர்பு படிவம்' : 'Contact Form'}
+        Contact Form
         <span>
-          <Envelope /> {currentLang === 'ta' ? 'தொடர்பு' : 'Contact'}
+          <Envelope /> Contact
         </span>
+        <img className="vector" width={100} height={100} src="/contact.svg" alt="contact" />
       </Title>
 
 
@@ -57,10 +46,10 @@ export function Contact() {
         <Form />
         <div className="meeting-section">
           <Title style={{ textAlign: "center" }}>
-            {currentLang === 'ta' ? 'ஒரு சந்திப்பை திட்டமிடுங்கள்' : 'Schedule a Meeting'}
+            Schedule a Meeting
           </Title>
           <Description style={{ textAlign: "center", marginTop: "3px" }}>
-            {currentLang === 'ta' ? 'இது Cal.com மூலம் இயக்கப்படுகிறது. எனவே, ஏற்றுவதற்கு சில நேரம் ஆகலாம். (குறிப்பு: சந்திப்பை திட்டமிட நீங்கள் Cal.com குக்கீகளை ஏற்க வேண்டும்)' : 'This is powered by Cal.com. Hence, it may take some time for loading. (Note: You have to accept the cookies by Cal.com in order to Schedule a meet)'}
+            This is powered by Cal.com. Hence, it may take some time for loading. (Note: You have to accept the cookies by Cal.com in order to Schedule a meet)
           </Description>
           <ResponsiveIframeContainer>
             <iframe
@@ -75,7 +64,7 @@ export function Contact() {
 
         <FeedbackButton onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSe4In23Sjw8XnNTZ8aWop7vfwlhrxPCCmrOVC3p3OXyigd8xQ/viewform?usp=dialog', '_blank')}>
           <PencilSimple size={20} />
-          {currentLang === 'ta' ? 'கருத்து எழுதுங்கள்' : 'Write a Feedback'}
+          Write a Feedback
         </FeedbackButton>
 
       </ContainerContact>

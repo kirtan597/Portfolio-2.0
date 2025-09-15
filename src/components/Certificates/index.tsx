@@ -8,26 +8,14 @@ import { Carousel } from 'react-responsive-carousel'
 import { Title } from '../../styles/styles'
 import * as S from './styles'
 import { GraduationCap } from 'phosphor-react'
-import { useTranslation } from 'react-i18next'
-import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
-
 export function Certificates() {
-  const { t, i18n } = useTranslation('common');
-  const router = useRouter();
-  const [currentLang, setCurrentLang] = useState<'en' | 'gu'>('en');
-
-  useEffect(() => {
-    const { locale } = router;
-    setCurrentLang(locale as 'en' | 'gu');
-  }, [router.locale]);
 
   return (
     <S.ContainerEducation>
       <Title>
-        {currentLang === 'ta' ? 'முக்கிய நிகழ்வுகள்' : 'Highlights'}
+        Highlights
         <span>
-          <GraduationCap /> {currentLang === 'ta' ? 'சான்றிதழ்' : 'Certification'}
+          <GraduationCap /> Certification
         </span>
       </Title>
       <S.EducationContent>
@@ -43,28 +31,28 @@ export function Certificates() {
                       borderRadius: '50%',
                       objectFit: 'cover',
                     }}
-                    src={certificates.logo} alt={certificates.subTitle[currentLang]} />
+                    src={certificates.logo} alt={certificates.subTitle.en} />
                     <p>
-                      <span><strong>{currentLang === 'ta' ? 'தேதி:' : 'Date:'}</strong> {certificates.level[currentLang]} </span>
+                      <span><strong>Date:</strong> {certificates.level.en} </span>
                     </p>
                     <p>
-                      <span><strong>{currentLang === 'ta' ? 'நிலை:' : 'Status:'}</strong> {certificates.status[currentLang]}</span>
+                      <span><strong>Status:</strong> {certificates.status.en}</span>
                     </p>
                   </S.ListImage>
 
                   <S.ListContent>
-                    <h2>{certificates.title[currentLang]}</h2>
+                    <h2>{certificates.title.en}</h2>
                     <h3>
                       <a href={certificates.link} download>
-                        {certificates.subTitle[currentLang]}
+                        {certificates.subTitle.en}
                       </a>
                     </h3>
-                    <p>{certificates.description[currentLang]?.split('\n').map((line, i) => (
+                    <p>{certificates.description.en?.split('\n').map((line, i) => (
                       <a key={i}>
                         {line}
                         <br />
                       </a>
-                    )) || certificates.description[currentLang]}</p>
+                    )) || certificates.description.en}</p>
                   </S.ListContent>
                 </S.List>
               );
@@ -75,7 +63,7 @@ export function Certificates() {
           <img
             className="education-logo"
             src="/education/education.svg"
-            alt={currentLang === 'ta' ? 'கணினியில் சிறுவன்' : 'boy on computer'}
+            alt="boy on computer"
           />
 
           <Carousel
@@ -95,7 +83,7 @@ export function Certificates() {
                     className="carousel"
                     key={certificate_img.id}
                     src={certificate_img.image}
-                    alt={certificate_img.name[currentLang]}
+                    alt={certificate_img.name.en}
                     loading="lazy"
                   />
                 )
