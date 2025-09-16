@@ -27,7 +27,7 @@
 
 <div align="center">
 
-[![Live Demo](https://custom-icon-badges.demolab.com/badge/-Live%20Demo-FF6B6B?style=for-the-badge&logo=globe&logoColor=white)](https://kirtan-portfolio.vercel.app/)
+[![Live Demo](https://custom-icon-badges.demolab.com/badge/-Live%20Demo-FF6B6B?style=for-the-badge&logo=globe&logoColor=white)](https://portfolio-2-0-green.vercel.app/)
 [![GitHub Stars](https://custom-icon-badges.demolab.com/github/stars/kirtan597/Portfolio-2.0?color=FFD700&style=for-the-badge&logo=star&logoColor=white)](https://github.com/kirtan597/Portfolio-2.0/stargazers)
 [![GitHub Forks](https://custom-icon-badges.demolab.com/github/forks/kirtan597/Portfolio-2.0?color=4285F4&style=for-the-badge&logo=fork&logoColor=white)](https://github.com/kirtan597/Portfolio-2.0/network/members)
 [![License](https://custom-icon-badges.demolab.com/badge/License-MIT-00D26A?style=for-the-badge&logo=law&logoColor=white)](LICENSE)
@@ -42,7 +42,7 @@
 ## ⭐ Live Demo
 
 <div align="center">
-  <a href="https://kirtan-portfolio.vercel.app/" target="_blank">
+  <a href="https://portfolio-2-0-green.vercel.app/" target="_blank">
     <img src="https://custom-icon-badges.demolab.com/badge/-VISIT%20LIVE%20PORTFOLIO-FF6B6B?style=for-the-badge&logo=rocket&logoColor=white&labelColor=DC2626" alt="Visit Portfolio" />
   </a>
 </div>
@@ -305,7 +305,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 ### ⭐ **Kirtankumar Panchal**
 *Full Stack Developer | React Enthusiast | Open Source Contributor*
 
-[![Portfolio](https://img.shields.io/badge/🌐_Portfolio-Visit_Now-FF6B6B?style=for-the-badge)](https://kirtan-portfolio.vercel.app/)
+[![Portfolio](https://img.shields.io/badge/🌐_Portfolio-Visit_Now-FF6B6B?style=for-the-badge)](https://portfolio-2-0-green.vercel.app/)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow_Me-181717?style=for-the-badge&logo=github)](https://github.com/kirtan597)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/kirtan-panchal-309760320)
 [![Email](https://img.shields.io/badge/Email-Contact_Me-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:kirtanpanchal597@gmail.com)
