@@ -5,59 +5,61 @@ export const ProjectsContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 3rem;
-  padding: 0 0.5rem;
+  margin-bottom: 2rem;
+  padding: 0 0.3rem;
   width: 100%;
   max-width: 100vw;
   box-sizing: border-box;
 
   @media (min-width: 480px) {
-    padding: 0 1rem;
-    margin-bottom: 4rem;
+    padding: 0 0.8rem;
+    margin-bottom: 3rem;
   }
 
   @media (min-width: 768px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    padding: 0 2rem;
-    margin-bottom: 5rem;
+    gap: 1rem;
+    padding: 0 1.5rem;
+    margin-bottom: 4rem;
   }
 
   @media (min-width: 1200px) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 1.5rem;
   }
 `
 
 export const ProjectsContent = styled.div`
   display: flex;
   flex-direction: column;
-  border-radius: 10px;
+  border-radius: 8px;
   position: relative;
   align-items: center;
   transition: transform 0.3s;
   overflow: hidden;
-  margin: 0 auto 1.5rem auto;
-  border: 2px solid ${props => props.theme.border};
+  margin: 0 auto 1rem auto;
+  border: 1px solid ${props => props.theme.border};
   width: 100%;
-  max-width: 320px;
+  max-width: 280px;
+  height: 180px;
   box-sizing: border-box;
 
   @media (min-width: 480px) {
-    max-width: 350px;
-    margin-bottom: 2rem;
+    max-width: 300px;
+    height: 200px;
+    margin-bottom: 1.5rem;
   }
 
   @media (min-width: 768px) {
     margin: 0;
     max-width: none;
+    height: 220px;
   }
 
   &:hover{
     border-color: ${props => props.theme.firstColor};
-    border-radius: 11px;
   }
 
   img {
@@ -153,16 +155,26 @@ export const ProjectsContent = styled.div`
 export const TagButton = styled.button<{ selected: boolean }>`
   background: ${props => props.theme.secondColor};
   color: ${props => props.theme.text};
-  padding: .5rem 1rem;
-  border-radius: 5px;
-  margin-right: .5rem;
-  margin-bottom: .5rem;
+  padding: .3rem .6rem;
+  border-radius: 4px;
   border: none;
   cursor: pointer;
-  transition: 0.3s;
-  font-weight: 700;
-  transform: ${props => props.selected ? 'scale(1.1)' : 'none'}; // scale up when selected
-  box-shadow: ${props => props.selected ? '0 0 10px rgba(0,0,0,0.5)' : 'none'}; // add shadow when selected
+  transition: 0.2s;
+  font-weight: 600;
+  font-size: 0.7rem;
+  transform: ${props => props.selected ? 'scale(1.02)' : 'none'};
+  box-shadow: ${props => props.selected ? '0 0 5px rgba(0,0,0,0.3)' : 'none'};
+
+  @media (min-width: 480px) {
+    padding: .35rem .7rem;
+    font-size: 0.75rem;
+  }
+
+  @media (min-width: 768px) {
+    padding: .4rem .8rem;
+    font-size: 0.85rem;
+    transform: ${props => props.selected ? 'scale(1.05)' : 'none'};
+  }
 
   &:hover {
     background: ${props => props.theme.secondColor};
@@ -172,29 +184,27 @@ export const TagButton = styled.button<{ selected: boolean }>`
     background: ${props.theme.firstColor};
     color: black; 
   `}
-
-  @media(min-width: 768px) {
-    margin-right: 1rem;
-  }
-
-  @media(min-width: 1200px) {
-    margin-right: 1.5rem;
-  }
 `;
 
 export const TagContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  padding: 0 1rem;
-  margin-bottom: 2rem;
+  gap: 0.3rem;
+  padding: 0 0.5rem;
+  margin-bottom: 1.5rem;
   width: 100%;
   max-width: 100vw;
   box-sizing: border-box;
 
+  @media (min-width: 480px) {
+    gap: 0.4rem;
+    padding: 0 0.8rem;
+  }
+
   @media (min-width: 768px) {
-    gap: 1rem;
-    padding: 0 2rem;
+    gap: 0.6rem;
+    padding: 0 1.5rem;
+    margin-bottom: 2rem;
   }
 `;

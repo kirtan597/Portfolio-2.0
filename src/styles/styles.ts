@@ -1,26 +1,32 @@
 import styled from 'styled-components'
 
 export const Section = styled.section`
-  margin-top: 5rem;
+  margin-top: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
-  padding: 0 1rem;
+  gap: 2rem;
+  padding: 0 0.5rem;
   width: 100%;
   max-width: 100vw;
   box-sizing: border-box;
 
+  @media (min-width: 480px) {
+    margin-top: 4rem;
+    gap: 2.5rem;
+    padding: 0 0.8rem;
+  }
+
   @media (min-width: 768px) {
-    margin-top: 6rem;
-    gap: 4rem;
-    padding: 0 2rem;
+    margin-top: 5rem;
+    gap: 3rem;
+    padding: 0 1.5rem;
   }
 
   @media (min-width: 994px) {
-    margin-top: 7rem;
-    gap: 5rem;
+    margin-top: 6rem;
+    gap: 4rem;
   }
 `
 
@@ -45,10 +51,10 @@ export const Container = styled.section`
 
 export const Title = styled.h2`
   position: relative;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 800;
-  padding-top: 2rem;
-  margin-bottom: 1.5rem;
+  padding-top: 1rem;
+  margin-bottom: 1rem;
   color: ${props => props.theme.firstColor};
   z-index: 1;
   opacity: 1;
@@ -56,18 +62,21 @@ export const Title = styled.h2`
   width: 100%;
 
   @media (min-width: 480px) {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
+    padding-top: 1.5rem;
+    margin-bottom: 1.2rem;
   }
 
   @media (min-width: 768px) {
-    font-size: 2.8rem;
-    padding-top: 3rem;
-    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    padding-top: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   @media (min-width: 994px) {
-    font-size: 3.5rem;
-    padding-top: 4rem;
+    font-size: 2.8rem;
+    padding-top: 3rem;
+    margin-bottom: 2rem;
   }
 
   p {

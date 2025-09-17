@@ -2,16 +2,16 @@ import styled, { css } from 'styled-components'
 
 export const HeaderContainer = styled.header`
   position: fixed;
-  top: 8px;
+  top: 5px;
   left: 50%;
   transform: translateX(-50%);
-  width: 98%;
+  width: 96%;
   max-width: 800px;
-  height: 48px;
-  background: rgba(0, 0, 0, 0.8);
+  height: 40px;
+  background: rgba(0, 0, 0, 0.9);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
   z-index: 1000;
   animation: slideDown 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
@@ -53,19 +53,19 @@ export const HeaderContainer = styled.header`
     align-items: center;
     justify-content: space-between;
     height: 100%;
-    padding: 0 12px;
+    padding: 0 8px;
     position: relative;
 
     @media (min-width: 480px) {
-      padding: 0 16px;
+      padding: 0 12px;
     }
 
     @media (min-width: 768px) {
-      padding: 0 30px;
+      padding: 0 20px;
     }
 
     @media (min-width: 994px) {
-      padding: 0 40px;
+      padding: 0 30px;
     }
   }
 
@@ -73,26 +73,21 @@ export const HeaderContainer = styled.header`
     z-index: 2;
     
     .logo-text {
-      font-size: 14px;
-      font-weight: 800;
-      color: ${props => props.theme.textPrimary};
+      font-size: 12px;
+      font-weight: 700;
+      color: white;
       opacity: 1;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-      background: linear-gradient(135deg, ${props => props.theme.textPrimary}, ${props => props.theme.firstColor});
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
 
       @media (min-width: 480px) {
-        font-size: 16px;
+        font-size: 14px;
       }
 
       @media (min-width: 768px) {
-        font-size: 18px;
+        font-size: 16px;
       }
 
       @media (min-width: 994px) {
-        font-size: 20px;
+        font-size: 18px;
       }
     }
   }
@@ -182,40 +177,38 @@ export const HeaderContainer = styled.header`
   }
 
   .theme-toggle-nav {
-    width: 36px;
-    height: 36px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
-    color: ${props => props.theme.textPrimary};
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 16px;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    margin-left: 8px;
-    position: relative;
-    overflow: hidden;
+    font-size: 12px;
+    transition: all 0.3s ease;
+    margin-left: 6px;
 
     @media (min-width: 480px) {
-      width: 40px;
-      height: 40px;
-      font-size: 18px;
-      margin-left: 10px;
+      width: 32px;
+      height: 32px;
+      font-size: 14px;
+      margin-left: 8px;
     }
 
     @media (min-width: 768px) {
-      width: 45px;
-      height: 45px;
-      font-size: 19px;
-      margin-left: 12px;
+      width: 36px;
+      height: 36px;
+      font-size: 16px;
+      margin-left: 10px;
     }
 
     @media (min-width: 994px) {
-      width: 50px;
-      height: 50px;
-      font-size: 20px;
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
     }
     
     &::before {
@@ -252,25 +245,25 @@ export const MobileIcon = styled.div`
     display: block;
     position: absolute;
     top: 50%;
-    right: 12px;
+    right: 8px;
     transform: translateY(-50%);
     cursor: pointer;
     z-index: 20;
-    color: ${props => props.theme.textPrimary};
-    font-size: 20px;
-    padding: 8px;
+    color: white;
+    font-size: 16px;
+    padding: 4px;
     border-radius: 4px;
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
 
     @media (min-width: 480px) {
-      right: 16px;
-      font-size: 22px;
+      right: 12px;
+      font-size: 18px;
+      padding: 6px;
     }
 
     @media (min-width: 768px) {
-      right: 20px;
-      font-size: 24px;
+      right: 16px;
+      font-size: 20px;
     }
   }
 `
