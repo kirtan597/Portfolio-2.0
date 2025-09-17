@@ -5,19 +5,29 @@ export const ProjectsContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 5rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-bottom: 3rem;
+  padding: 0 0.5rem;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
 
+  @media (min-width: 480px) {
+    padding: 0 1rem;
+    margin-bottom: 4rem;
+  }
 
   @media (min-width: 768px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 0 2rem;
+    margin-bottom: 5rem;
   }
 
   @media (min-width: 1200px) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
   }
 `
 
@@ -29,10 +39,21 @@ export const ProjectsContent = styled.div`
   align-items: center;
   transition: transform 0.3s;
   overflow: hidden;
-  margin-left: 2rem;
-  margin-right: 2rem;
-  margin-bottom: 2rem;
+  margin: 0 auto 1.5rem auto;
   border: 2px solid ${props => props.theme.border};
+  width: 100%;
+  max-width: 320px;
+  box-sizing: border-box;
+
+  @media (min-width: 480px) {
+    max-width: 350px;
+    margin-bottom: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    margin: 0;
+    max-width: none;
+  }
 
   &:hover{
     border-color: ${props => props.theme.firstColor};
@@ -53,8 +74,7 @@ export const ProjectsContent = styled.div`
 
   .title {
     position: absolute;
-    padding: 0 1rem 2.2rem 1rem;
-
+    padding: 0 0.8rem 1.5rem 0.8rem;
     bottom: 0;
     height: 100%;
     width: 100%;
@@ -63,9 +83,16 @@ export const ProjectsContent = styled.div`
     justify-content: flex-end;
     align-items: flex-start;
     background: linear-gradient(rgb(0, 0, 0, 0) -60%, rgb(8, 2, 5, 15));
-
     opacity: 0;
     transition: 0.4s ease-in-out;
+
+    @media (min-width: 480px) {
+      padding: 0 1rem 2rem 1rem;
+    }
+
+    @media (min-width: 768px) {
+      padding: 0 1rem 2.2rem 1rem;
+    }
 
     &:hover {
       opacity: 1;
@@ -74,17 +101,35 @@ export const ProjectsContent = styled.div`
 
     h2 {
       font-weight: 900;
-      font-size: 1.9rem;
+      font-size: 1.4rem;
       text-align: center;
       color: ${props => props.theme.firstColor};
+
+      @media (min-width: 480px) {
+        font-size: 1.6rem;
+      }
+
+      @media (min-width: 768px) {
+        font-size: 1.9rem;
+      }
     }
 
     span {
-      font-size: 1.2rem;
+      font-size: 1rem;
       font-weight: 700;
       color: white;
-      margin-bottom: .8rem;
-      font-align: center;
+      margin-bottom: .6rem;
+      text-align: center;
+
+      @media (min-width: 480px) {
+        font-size: 1.1rem;
+        margin-bottom: .7rem;
+      }
+
+      @media (min-width: 768px) {
+        font-size: 1.2rem;
+        margin-bottom: .8rem;
+      }
     }
 
     .tags {
@@ -103,7 +148,7 @@ export const ProjectsContent = styled.div`
     max-width: 25rem;
   }
 
-  max-width: 24rem;
+
 `
 export const TagButton = styled.button<{ selected: boolean }>`
   background: ${props => props.theme.secondColor};
@@ -141,5 +186,15 @@ export const TagContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+
+  @media (min-width: 768px) {
+    gap: 1rem;
+    padding: 0 2rem;
+  }
 `;

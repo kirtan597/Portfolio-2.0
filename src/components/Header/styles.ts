@@ -2,23 +2,32 @@ import styled, { css } from 'styled-components'
 
 export const HeaderContainer = styled.header`
   position: fixed;
-  top: 10px;
+  top: 8px;
   left: 50%;
   transform: translateX(-50%);
-  width: 95%;
+  width: 98%;
   max-width: 800px;
-  height: 50px;
-  background: transparent;
-  border: none;
-  border-radius: 25px;
+  height: 48px;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
   z-index: 1000;
   animation: slideDown 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  @media (min-width: 480px) {
+    width: 95%;
+    height: 52px;
+    top: 10px;
+  }
 
   @media (min-width: 768px) {
     top: 15px;
     width: 90%;
     height: 60px;
     border-radius: 30px;
+    background: transparent;
+    border: none;
   }
 
   @media (min-width: 994px) {
@@ -44,8 +53,12 @@ export const HeaderContainer = styled.header`
     align-items: center;
     justify-content: space-between;
     height: 100%;
-    padding: 0 15px;
+    padding: 0 12px;
     position: relative;
+
+    @media (min-width: 480px) {
+      padding: 0 16px;
+    }
 
     @media (min-width: 768px) {
       padding: 0 30px;
@@ -60,7 +73,7 @@ export const HeaderContainer = styled.header`
     z-index: 2;
     
     .logo-text {
-      font-size: 20px;
+      font-size: 14px;
       font-weight: 800;
       color: ${props => props.theme.textPrimary};
       opacity: 1;
@@ -69,6 +82,18 @@ export const HeaderContainer = styled.header`
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+
+      @media (min-width: 480px) {
+        font-size: 16px;
+      }
+
+      @media (min-width: 768px) {
+        font-size: 18px;
+      }
+
+      @media (min-width: 994px) {
+        font-size: 20px;
+      }
     }
   }
 
@@ -157,8 +182,8 @@ export const HeaderContainer = styled.header`
   }
 
   .theme-toggle-nav {
-    width: 50px;
-    height: 50px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     border: 2px solid rgba(255, 255, 255, 0.3);
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
@@ -167,11 +192,31 @@ export const HeaderContainer = styled.header`
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 16px;
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    margin-left: 12px;
+    margin-left: 8px;
     position: relative;
     overflow: hidden;
+
+    @media (min-width: 480px) {
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
+      margin-left: 10px;
+    }
+
+    @media (min-width: 768px) {
+      width: 45px;
+      height: 45px;
+      font-size: 19px;
+      margin-left: 12px;
+    }
+
+    @media (min-width: 994px) {
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+    }
     
     &::before {
       content: '';
@@ -198,19 +243,7 @@ export const HeaderContainer = styled.header`
 
 
 
-  @media (max-width: 480px) {
-    width: 98%;
-    height: 45px;
-    top: 5px;
-    
-    .navbar-container {
-      padding: 0 10px;
-    }
-    
-    .logo-section .logo-text {
-      font-size: 14px;
-    }
-  }
+
 `
 
 export const MobileIcon = styled.div`
@@ -219,11 +252,26 @@ export const MobileIcon = styled.div`
     display: block;
     position: absolute;
     top: 50%;
-    right: 20px;
+    right: 12px;
     transform: translateY(-50%);
     cursor: pointer;
     z-index: 20;
     color: ${props => props.theme.textPrimary};
+    font-size: 20px;
+    padding: 8px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+
+    @media (min-width: 480px) {
+      right: 16px;
+      font-size: 22px;
+    }
+
+    @media (min-width: 768px) {
+      right: 20px;
+      font-size: 24px;
+    }
   }
 `
 
@@ -235,14 +283,15 @@ export const NavMenu = styled.nav<Click>`
   @media (max-width: 994px) {
     height: 100vh;
     width: 100vw;
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(0, 0, 0, 0.98);
     backdrop-filter: blur(20px);
-    z-index: 10;
+    z-index: 15;
     position: fixed;
     top: 0;
     left: 0;
     transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto;
   }
 
   ul {
@@ -254,10 +303,16 @@ export const NavMenu = styled.nav<Click>`
       justify-content: center;
       align-items: center;
       height: 100%;
-      gap: 2rem;
-      padding: 0;
+      gap: 1.5rem;
+      padding: 2rem 1rem;
       margin: 0;
       list-style: none;
+      box-sizing: border-box;
+
+      @media (min-width: 480px) {
+        gap: 2rem;
+        padding: 2rem;
+      }
     }
 
     li {
@@ -265,17 +320,30 @@ export const NavMenu = styled.nav<Click>`
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 8px;
+        gap: 6px;
         color: white;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 500;
         text-decoration: none;
-        padding: 15px 25px;
-        border-radius: 15px;
+        padding: 12px 20px;
+        border-radius: 12px;
         transition: all 0.3s ease;
+        min-height: 60px;
+        justify-content: center;
         
         svg {
-          font-size: 24px;
+          font-size: 20px;
+        }
+
+        @media (min-width: 480px) {
+          font-size: 16px;
+          padding: 15px 25px;
+          gap: 8px;
+          min-height: 70px;
+          
+          svg {
+            font-size: 24px;
+          }
         }
         
         &:hover {
