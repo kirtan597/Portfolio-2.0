@@ -57,25 +57,26 @@ export const Box = styled.div`
 export const Card = styled.div`
   position: relative;
   margin: auto;
-  height: 350px;
-  width: 600px;
+  height: auto;
+  min-height: 250px;
+  width: 100%;
+  max-width: 600px;
   text-align: center;
   background: linear-gradient(#e96874, #6e3663, #2b0830);
   border-radius: 5px;
   box-shadow: 0 6px 12px -3px rgba(0, 0, 0, 0.3);
   color: #fff;
-  padding: 30px;
+  padding: 20px;
+  box-sizing: border-box;
 
-    @media (max-width: 994px) {
-    width: 100%;
+  @media (min-width: 768px) {
     height: 300px;
-    padding: 20px;
+    padding: 25px;
   }
 
-    @media (max-width: 500px) {
-    width: 100%;
-    height: 250px;
-    padding: 20px;
+  @media (min-width: 994px) {
+    height: 350px;
+    padding: 30px;
   }
 
   header {
@@ -186,7 +187,16 @@ export const Content = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 4rem;
+  margin-top: 2rem;
+  padding: 0 1rem;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+
+  @media (min-width: 768px) {
+    margin-top: 3rem;
+    padding: 0 2rem;
+  }
 
   @media (min-width: 994px) {
     display: grid;
@@ -194,7 +204,8 @@ export const Content = styled.div`
     justify-content: center;
     align-items: center;
     margin-top: -1rem;
-    padding-left: 2rem;
+    padding: 0 2rem;
+    gap: 2rem;
   }
 `
 
@@ -243,19 +254,25 @@ export const HomeText = styled.div`
   }
 
   h1 {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 800;
     color: ${props => props.theme.firstColor};
     background: linear-gradient(90deg, #9442fe, #3378ff);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    line-height: 1.2;
+    margin: 0.5rem 0;
 
-    @media (max-width: 350px) {
-      font-size: 1.8rem;
+    @media (min-width: 480px) {
+      font-size: 2.2rem;
     }
 
     @media (min-width: 768px) {
+      font-size: 2.8rem;
+    }
+
+    @media (min-width: 994px) {
       font-size: 3.3rem;
     }
   }
@@ -306,9 +323,13 @@ export const HomeText = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 1rem;
 
     @media (min-width: 768px) {
       flex-direction: row;
+      justify-content: center;
       gap: 1rem;
     }
 
@@ -356,7 +377,9 @@ export const ImgHome = styled.div`
     @media (min-width: 994px) {
       display: block;
       position: relative;
-      width: 32rem;
+      width: 100%;
+      max-width: 32rem;
+      height: auto;
       -webkit-animation: icon-move-people 4s ease 2s infinite alternate;
       animation: icon-move-people 5s ease 2s infinite alternate;
 

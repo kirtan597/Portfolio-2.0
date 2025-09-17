@@ -2,17 +2,31 @@ import styled, { css } from 'styled-components'
 
 export const HeaderContainer = styled.header`
   position: fixed;
-  top: 20px;
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 85%;
+  width: 95%;
   max-width: 800px;
-  height: 65px;
+  height: 50px;
   background: transparent;
   border: none;
-  border-radius: 35px;
+  border-radius: 25px;
   z-index: 1000;
   animation: slideDown 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  @media (min-width: 768px) {
+    top: 15px;
+    width: 90%;
+    height: 60px;
+    border-radius: 30px;
+  }
+
+  @media (min-width: 994px) {
+    top: 20px;
+    width: 85%;
+    height: 65px;
+    border-radius: 35px;
+  }
   
   @keyframes slideDown {
     0% {
@@ -30,10 +44,16 @@ export const HeaderContainer = styled.header`
     align-items: center;
     justify-content: space-between;
     height: 100%;
-    padding: 0 40px;
+    padding: 0 15px;
     position: relative;
-    
 
+    @media (min-width: 768px) {
+      padding: 0 30px;
+    }
+
+    @media (min-width: 994px) {
+      padding: 0 40px;
+    }
   }
 
   .logo-section {
@@ -178,30 +198,17 @@ export const HeaderContainer = styled.header`
 
 
 
-  @media (max-width: 994px) {
-    top: 15px;
-    width: 95%;
-    height: 55px;
-    
-    .navbar-container {
-      padding: 0 25px;
-    }
-    
-    .logo-section .logo-text {
-      font-size: 18px;
-    }
-  }
-  
   @media (max-width: 480px) {
     width: 98%;
-    height: 50px;
+    height: 45px;
+    top: 5px;
     
     .navbar-container {
-      padding: 0 20px;
+      padding: 0 10px;
     }
     
     .logo-section .logo-text {
-      font-size: 16px;
+      font-size: 14px;
     }
   }
 `

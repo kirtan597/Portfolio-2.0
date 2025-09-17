@@ -1,34 +1,73 @@
 import styled from 'styled-components'
 
 export const Section = styled.section`
-  margin-top: 7rem;
+  margin-top: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5rem;
+  gap: 3rem;
+  padding: 0 1rem;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+
+  @media (min-width: 768px) {
+    margin-top: 6rem;
+    gap: 4rem;
+    padding: 0 2rem;
+  }
+
+  @media (min-width: 994px) {
+    margin-top: 7rem;
+    gap: 5rem;
+  }
 `
 
 export const Container = styled.section`
-  padding-top: 2rem;
-  display: inline-flex;
+  padding-top: 1rem;
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @media (min-width: 768px) {
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 `
 
 export const Title = styled.h2`
   position: relative;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   font-weight: 800;
-  padding-top: 4rem;
-  margin-bottom: 2rem;
+  padding-top: 2rem;
+  margin-bottom: 1.5rem;
   color: ${props => props.theme.firstColor};
   z-index: 1;
   opacity: 1;
+  text-align: center;
+  width: 100%;
+
+  @media (min-width: 480px) {
+    font-size: 2.2rem;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 2.8rem;
+    padding-top: 3rem;
+    margin-bottom: 2rem;
+  }
 
   @media (min-width: 994px) {
     font-size: 3.5rem;
+    padding-top: 4rem;
   }
 
   p {
@@ -44,7 +83,7 @@ export const Title = styled.h2`
   span {
     z-index: -1;
     display: grid;
-    gap: 1rem;
+    gap: 0.5rem;
     grid-template-columns: 1fr 1fr;
     justify-content: center;
     align-items: center;
@@ -54,15 +93,20 @@ export const Title = styled.h2`
     right: 50%;
     color: ${props => props.theme.secondColor};
     font-weight: 800;
-    font-size: 2.6rem;
+    font-size: 2rem;
 
     @media (min-width: 370px) {
+      top: -0.5rem;
+      font-size: 2.6rem;
+      gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
       top: -0.8rem;
       font-size: 3rem;
     }
 
     @media (min-width: 994px) {
-      top: -0.8rem;
       font-size: 4.5rem;
     }
   }
@@ -103,36 +147,77 @@ export const Title = styled.h2`
   }
 `
 export const SubTitle = styled.h4`
-  margin-top: -5rem;
-  margin-bottom: 3rem;
-  max-width: 50rem;
-  text-align: justify;
+  margin-top: -3rem;
+  margin-bottom: 2rem;
+  max-width: 100%;
+  text-align: center;
   padding: 0 1rem;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   color: ${props => props.theme.gray};
+  line-height: 1.5;
+
+  @media (min-width: 768px) {
+    margin-top: -4rem;
+    margin-bottom: 2.5rem;
+    font-size: 1.3rem;
+    max-width: 50rem;
+    text-align: justify;
+  }
+
+  @media (min-width: 994px) {
+    margin-top: -5rem;
+    margin-bottom: 3rem;
+    font-size: 1.5rem;
+  }
 `
 
 export const Description = styled.h4`
-  margin-top: -5rem;
-  margin-bottom: 3rem;
-  max-width: 50rem;
-  text-align: justify;
+  margin-top: -3rem;
+  margin-bottom: 2rem;
+  max-width: 100%;
+  text-align: center;
   padding: 0 1rem;
   color: ${props => props.theme.gray};
+  font-size: 1rem;
+  line-height: 1.5;
+
+  @media (min-width: 768px) {
+    margin-top: -4rem;
+    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
+    max-width: 50rem;
+    text-align: justify;
+  }
+
+  @media (min-width: 994px) {
+    margin-top: -5rem;
+    margin-bottom: 3rem;
+    font-size: 1.2rem;
+  }
 `
 
 export const Button = styled.button`
   background: ${props => props.theme.secondColor};
   color: ${props => props.theme.text};
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 500;
   display: flex;
   align-items: center;
-  padding: 1rem 1.2rem;
+  padding: 0.8rem 1rem;
   border: none;
   border-radius: 0.5rem;
   gap: 0.4rem;
+  width: 100%;
+  max-width: 200px;
+  justify-content: center;
+
+  @media (min-width: 768px) {
+    font-size: 1.2rem;
+    padding: 1rem 1.2rem;
+    max-width: none;
+    width: auto;
+  }
 
   &:hover {
     background: ${props => props.theme.hoverSecond};
@@ -159,23 +244,33 @@ export const Button2 = styled.button`
 
 export const ButtonPrimary = styled.button`
   background-color: transparent;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: ${props => props.theme.textPrimary};
-  padding: 1.2rem;
+  padding: 0.8rem 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  gap: 8px;
+  gap: 6px;
   cursor: pointer;
-  margin-top: 2rem;
+  margin-top: 1rem;
   border: 2px solid;
   border-radius: 5px;
   border-image: linear-gradient(225deg, #00d9ff 0%, #c001fa 100%) 1;
-  display: block;
   overflow: hidden;
   position: relative;
+  width: 100%;
+  max-width: 200px;
+
+  @media (min-width: 768px) {
+    font-size: 1.1rem;
+    padding: 1.2rem;
+    gap: 8px;
+    margin-top: 2rem;
+    max-width: none;
+    width: auto;
+  }
 
   &::before {
     content: '';

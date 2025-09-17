@@ -42,6 +42,7 @@ export default class MyDocument extends Document {
       <Html lang="pt-EN">
         <Head>
           <meta charSet="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
           <meta name="author" content="Saravanakumar" />
           <meta name="description" content={meta.description} />
           <meta itemProp="name" content={meta.title} />

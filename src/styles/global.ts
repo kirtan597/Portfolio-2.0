@@ -36,7 +36,9 @@ export const GlobalStyles = createGlobalStyle`
 
   html {
     scroll-behavior: smooth;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
   }
 
   html.normal-scroll {
@@ -47,7 +49,38 @@ export const GlobalStyles = createGlobalStyle`
     background: ${props => props.theme.background};
     color: ${props => props.theme.textPrimary};
     font-family: 'Poppins', sans-serif;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Ensure all containers respect viewport width */
+  * {
+    max-width: 100vw;
+  }
+
+  /* Mobile-first responsive containers */
+  .container {
+    width: 100%;
+    max-width: 100vw;
+    padding: 0 1rem;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      padding: 0 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      max-width: 1200px;
+      padding: 0 3rem;
+    }
   }
 
   ul {
