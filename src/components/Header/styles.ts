@@ -2,39 +2,34 @@ import styled, { css } from 'styled-components'
 
 export const HeaderContainer = styled.header`
   position: fixed;
-  top: 5px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 96%;
-  max-width: 800px;
-  height: 40px;
-  background: rgba(0, 0, 0, 0.9);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 1000;
-  animation: slideDown 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-
-  @media (min-width: 480px) {
-    width: 95%;
-    height: 52px;
-    top: 10px;
-  }
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 
   @media (min-width: 768px) {
-    top: 15px;
-    width: 90%;
-    height: 60px;
-    border-radius: 30px;
-    background: transparent;
-    border: none;
+    height: 70px;
+    background: rgba(0, 0, 0, 0.8);
   }
 
   @media (min-width: 994px) {
+    height: 80px;
+    background: transparent;
+    border: none;
     top: 20px;
-    width: 85%;
-    height: 65px;
-    border-radius: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
   
   @keyframes slideDown {
@@ -53,19 +48,17 @@ export const HeaderContainer = styled.header`
     align-items: center;
     justify-content: space-between;
     height: 100%;
-    padding: 0 8px;
+    padding: 0 1rem;
     position: relative;
-
-    @media (min-width: 480px) {
-      padding: 0 12px;
-    }
+    width: 100%;
+    box-sizing: border-box;
 
     @media (min-width: 768px) {
-      padding: 0 20px;
+      padding: 0 2rem;
     }
 
     @media (min-width: 994px) {
-      padding: 0 30px;
+      padding: 0 3rem;
     }
   }
 
@@ -73,36 +66,34 @@ export const HeaderContainer = styled.header`
     z-index: 2;
     
     .logo-text {
-      font-size: 12px;
-      font-weight: 700;
+      font-size: 1.2rem;
+      font-weight: 800;
       color: white;
-      opacity: 1;
-
-      @media (min-width: 480px) {
-        font-size: 14px;
-      }
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
 
       @media (min-width: 768px) {
-        font-size: 16px;
+        font-size: 1.4rem;
       }
 
       @media (min-width: 994px) {
-        font-size: 18px;
+        font-size: 1.6rem;
       }
     }
   }
 
   .nav-items {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    z-index: 2;
-    flex: 1;
-    justify-content: center;
-    margin: 0 20px;
+    display: none;
 
-    @media (max-width: 994px) {
-      display: none;
+    @media (min-width: 994px) {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      z-index: 2;
+      flex: 1;
+      justify-content: center;
+      margin: 0 2rem;
     }
   }
 
@@ -177,8 +168,8 @@ export const HeaderContainer = styled.header`
   }
 
   .theme-toggle-nav {
-    width: 28px;
-    height: 28px;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 50%;
     border: 1px solid rgba(255, 255, 255, 0.3);
     background: rgba(255, 255, 255, 0.1);
@@ -187,28 +178,21 @@ export const HeaderContainer = styled.header`
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 1rem;
     transition: all 0.3s ease;
-    margin-left: 6px;
-
-    @media (min-width: 480px) {
-      width: 32px;
-      height: 32px;
-      font-size: 14px;
-      margin-left: 8px;
-    }
+    margin-left: 0.5rem;
+    flex-shrink: 0;
 
     @media (min-width: 768px) {
-      width: 36px;
-      height: 36px;
-      font-size: 16px;
-      margin-left: 10px;
+      width: 3rem;
+      height: 3rem;
+      font-size: 1.2rem;
+      margin-left: 1rem;
     }
 
-    @media (min-width: 994px) {
-      width: 40px;
-      height: 40px;
-      font-size: 18px;
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.05);
     }
     
     &::before {
@@ -240,31 +224,33 @@ export const HeaderContainer = styled.header`
 `
 
 export const MobileIcon = styled.div`
-  display: none;
-  @media (max-width: 994px) {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 8px;
-    transform: translateY(-50%);
-    cursor: pointer;
-    z-index: 20;
-    color: white;
-    font-size: 16px;
-    padding: 4px;
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  z-index: 20;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
 
-    @media (min-width: 480px) {
-      right: 12px;
-      font-size: 18px;
-      padding: 6px;
-    }
+  @media (min-width: 768px) {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.4rem;
+  }
 
-    @media (min-width: 768px) {
-      right: 16px;
-      font-size: 20px;
-    }
+  @media (min-width: 994px) {
+    display: none;
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
   }
 `
 
@@ -274,17 +260,24 @@ interface Click {
 
 export const NavMenu = styled.nav<Click>`
   @media (max-width: 994px) {
-    height: 100vh;
+    position: fixed;
+    top: 60px;
+    left: 0;
     width: 100vw;
+    height: calc(100vh - 60px);
     background: rgba(0, 0, 0, 0.98);
     backdrop-filter: blur(20px);
-    z-index: 15;
-    position: fixed;
-    top: 0;
-    left: 0;
-    transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
+    z-index: 999;
+    transform: ${({ open }) => (open ? 'translateY(0)' : 'translateY(-100%)')};
     transition: transform 0.3s ease-in-out;
     overflow-y: auto;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+  }
+
+  @media (min-width: 768px) and (max-width: 994px) {
+    top: 70px;
+    height: calc(100vh - 70px);
   }
 
   ul {
@@ -293,55 +286,44 @@ export const NavMenu = styled.nav<Click>`
     @media (max-width: 994px) {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
-      height: 100%;
-      gap: 1.5rem;
-      padding: 2rem 1rem;
+      width: 100%;
+      gap: 1rem;
+      padding: 0;
       margin: 0;
       list-style: none;
       box-sizing: border-box;
-
-      @media (min-width: 480px) {
-        gap: 2rem;
-        padding: 2rem;
-      }
     }
 
     li {
+      width: 100%;
+      max-width: 300px;
+      
       a {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
-        gap: 6px;
+        gap: 1rem;
         color: white;
-        font-size: 14px;
+        font-size: 1.1rem;
         font-weight: 500;
         text-decoration: none;
-        padding: 12px 20px;
+        padding: 1rem 1.5rem;
         border-radius: 12px;
         transition: all 0.3s ease;
-        min-height: 60px;
-        justify-content: center;
+        width: 100%;
+        box-sizing: border-box;
+        justify-content: flex-start;
         
         svg {
-          font-size: 20px;
-        }
-
-        @media (min-width: 480px) {
-          font-size: 16px;
-          padding: 15px 25px;
-          gap: 8px;
-          min-height: 70px;
-          
-          svg {
-            font-size: 24px;
-          }
+          font-size: 1.5rem;
+          flex-shrink: 0;
         }
         
         &:hover {
           background: rgba(255, 255, 255, 0.1);
-          transform: translateY(-2px);
+          transform: translateX(10px);
         }
       }
     }

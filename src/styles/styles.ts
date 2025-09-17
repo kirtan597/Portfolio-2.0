@@ -1,32 +1,27 @@
 import styled from 'styled-components'
 
 export const Section = styled.section`
-  margin-top: 3rem;
+  margin-top: 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  padding: 0 0.5rem;
+  padding: 2rem 1rem;
   width: 100%;
   max-width: 100vw;
   box-sizing: border-box;
 
-  @media (min-width: 480px) {
-    margin-top: 4rem;
-    gap: 2.5rem;
-    padding: 0 0.8rem;
-  }
-
   @media (min-width: 768px) {
-    margin-top: 5rem;
+    margin-top: 90px;
     gap: 3rem;
-    padding: 0 1.5rem;
+    padding: 3rem 2rem;
   }
 
   @media (min-width: 994px) {
-    margin-top: 6rem;
+    margin-top: 120px;
     gap: 4rem;
+    padding: 4rem 3rem;
   }
 `
 
