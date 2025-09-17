@@ -182,10 +182,13 @@ export function MobileProjects() {
         }
 
         .projects-grid {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 2rem;
+          display: flex;
+          gap: 1rem;
           width: 100%;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          padding: 0 1rem 1rem 1rem;
+          margin: 0 -1rem;
         }
 
         .project-card {
@@ -195,8 +198,9 @@ export function MobileProjects() {
           border-radius: 20px;
           overflow: hidden;
           transition: all 0.3s ease;
-          width: 100%;
-          max-width: 100%;
+          flex: 0 0 280px;
+          width: 280px;
+          scroll-snap-align: start;
           box-sizing: border-box;
         }
 
@@ -209,7 +213,7 @@ export function MobileProjects() {
         .project-image {
           position: relative;
           width: 100%;
-          height: 200px;
+          height: 160px;
           overflow: hidden;
         }
 
@@ -237,7 +241,7 @@ export function MobileProjects() {
         }
 
         .project-content {
-          padding: 1.5rem;
+          padding: 1rem;
         }
 
         .project-header {
@@ -252,34 +256,39 @@ export function MobileProjects() {
         }
 
         .project-title {
-          font-size: 1.3rem;
+          font-size: 1.1rem;
           font-weight: 700;
           margin: 0;
           color: #667eea;
+          line-height: 1.3;
         }
 
         .project-description {
-          font-size: 0.9rem;
-          line-height: 1.5;
+          font-size: 0.8rem;
+          line-height: 1.4;
           opacity: 0.8;
-          margin: 0 0 1.5rem 0;
+          margin: 0 0 1rem 0;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
         }
 
         .tech-stack {
           display: flex;
           flex-wrap: wrap;
-          gap: 0.5rem;
-          margin-bottom: 1.5rem;
+          gap: 0.3rem;
+          margin-bottom: 1rem;
         }
 
         .tech-tag {
           display: flex;
           align-items: center;
-          gap: 0.3rem;
+          gap: 0.2rem;
           background: rgba(255, 255, 255, 0.1);
-          padding: 0.4rem 0.8rem;
-          border-radius: 12px;
-          font-size: 0.8rem;
+          padding: 0.3rem 0.6rem;
+          border-radius: 10px;
+          font-size: 0.7rem;
           font-weight: 500;
         }
 
@@ -290,18 +299,19 @@ export function MobileProjects() {
 
         .project-actions {
           display: flex;
-          gap: 1rem;
+          flex-direction: column;
+          gap: 0.5rem;
           width: 100%;
         }
 
         .demo-btn,
         .github-btn {
-          flex: 1;
-          padding: 0.8rem 1rem;
+          width: 100%;
+          padding: 0.7rem 1rem;
           border: none;
-          border-radius: 12px;
+          border-radius: 10px;
           font-weight: 600;
-          font-size: 0.9rem;
+          font-size: 0.8rem;
           cursor: pointer;
           transition: all 0.3s ease;
           text-decoration: none;
@@ -309,7 +319,7 @@ export function MobileProjects() {
           display: flex;
           align-items: center;
           justify-content: center;
-          min-height: 44px;
+          min-height: 40px;
         }
 
         .demo-btn {
@@ -390,10 +400,60 @@ export function MobileProjects() {
           border: none;
         }
 
+        /* Scrollbar styling */
+        .projects-grid::-webkit-scrollbar {
+          height: 4px;
+        }
+        
+        .projects-grid::-webkit-scrollbar-track {
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 2px;
+        }
+        
+        .projects-grid::-webkit-scrollbar-thumb {
+          background: #667eea;
+          border-radius: 2px;
+        }
+
         /* Responsive breakpoints */
         @media (min-width: 480px) {
-          .container {
-            padding: 0 1.5rem;
+          .project-card {
+            flex: 0 0 320px;
+            width: 320px;
+          }
+          
+          .project-image {
+            height: 180px;
+          }
+          
+          .project-content {
+            padding: 1.2rem;
+          }
+          
+          .project-actions {
+            flex-direction: row;
+            gap: 0.8rem;
+          }
+          
+          .demo-btn,
+          .github-btn {
+            flex: 1;
+          }
+        }
+
+        @media (min-width: 768px) {
+          .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            overflow-x: visible;
+            padding: 0;
+            margin: 0;
+          }
+          
+          .project-card {
+            flex: none;
+            width: 100%;
           }
           
           .project-image {
@@ -401,22 +461,7 @@ export function MobileProjects() {
           }
           
           .project-content {
-            padding: 2rem;
-          }
-        }
-
-        @media (min-width: 768px) {
-          .container {
-            padding: 0 2rem;
-          }
-          
-          .projects-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2.5rem;
-          }
-          
-          .project-image {
-            height: 240px;
+            padding: 1.5rem;
           }
         }
 
@@ -425,41 +470,43 @@ export function MobileProjects() {
             max-width: 1200px;
             padding: 0 3rem;
           }
-          
-          .projects-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
-          }
         }
 
-        @media (min-width: 1200px) {
-          .projects-grid {
-            grid-template-columns: repeat(3, 1fr);
-          }
-        }
-
-        /* Ensure no horizontal scroll */
+        /* Small screens optimization */
         @media (max-width: 320px) {
           .container {
-            padding: 0 0.5rem;
+            padding: 0;
+          }
+          
+          .projects-grid {
+            padding: 0 0.5rem 1rem 0.5rem;
+            margin: 0 -0.5rem;
+          }
+          
+          .project-card {
+            flex: 0 0 260px;
+            width: 260px;
           }
           
           .project-content {
-            padding: 1rem;
+            padding: 0.8rem;
           }
           
-          .project-actions {
-            flex-direction: column;
-            gap: 0.5rem;
+          .project-image {
+            height: 140px;
           }
-          
-          .tech-stack {
-            gap: 0.3rem;
-          }
-          
-          .tech-tag {
-            font-size: 0.7rem;
-            padding: 0.3rem 0.6rem;
+        }
+        
+        /* Scroll indicator */
+        .projects-grid::after {
+          content: '';
+          flex: 0 0 1px;
+          height: 1px;
+        }
+        
+        @media (min-width: 768px) {
+          .projects-grid::after {
+            display: none;
           }
         }
       `}</style>
